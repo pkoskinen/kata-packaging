@@ -6,7 +6,7 @@ Name: kata-ckan-dev
 Version: %autov
 Release: 1%{?dist}
 Group: Applications/File (to be verified)
-License: GPLv2+ (to be verified)
+License: AGPLv3+
 #Url: http://not.sure.yet
 Source0: kata-ckan-dev-%{version}.tgz
 Requires: apache-solr
