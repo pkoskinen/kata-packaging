@@ -2,7 +2,7 @@
  Package                Arch   Version                Repository           Size
 ================================================================================
 Installing:
- kata-ckan-prod         x86_64 594275-1.el6           /kata-ckan-prod-594275-1.el6.x86_64
+ kata-ckan-prod         x86_64 598265-1.el6           /kata-ckan-prod-598265-1.el6.x86_64
                                                                           105 M
 Installing for dependencies:
  SDL                    x86_64 1.2.14-3.el6           base                193 k
@@ -113,7 +113,7 @@ Transaction Summary
 ================================================================================
 Install     103 Package(s)
 
-Total size: 173 M
+Total size: 174 M
 Total download size: 68 M
 Installed size: 298 M
 
@@ -233,9 +233,9 @@ patching file ssl.conf
 + mv development.ini.1 development.ini
 + '[' '!' -e /tmp/kata-SKIP-dbinit ']'
 + paster --plugin=ckan db init
-2012-12-16 13:42:06,039 DEBUG [ckanext.kata] disable search
-2012-12-16 13:42:06,315 DEBUG [ckanext.harvest.model] Harvest tables defined in memory
-2012-12-16 13:42:06,317 DEBUG [ckanext.harvest.model] Harvest table creation deferred
+2012-12-19 08:11:17,732 DEBUG [ckanext.kata] disable search
+2012-12-19 08:11:17,947 DEBUG [ckanext.harvest.model] Harvest tables defined in memory
+2012-12-19 08:11:17,948 DEBUG [ckanext.harvest.model] Harvest table creation deferred
 /home/ckan/pyenv/lib/python2.6/site-packages/sqlalchemy/engine/reflection.py:47: SAWarning: Skipped unsupported reflection of expression-based index idx_pkg_lname
   ret = fn(self, con, *args, **kw)
 /home/ckan/pyenv/lib/python2.6/site-packages/sqlalchemy/engine/reflection.py:47: SAWarning: Skipped unsupported reflection of expression-based index idx_pkg_slname
@@ -246,8 +246,8 @@ patching file ssl.conf
   ret = fn(self, con, *args, **kw)
 /home/ckan/pyenv/lib/python2.6/site-packages/sqlalchemy/engine/reflection.py:47: SAWarning: Skipped unsupported reflection of expression-based index idx_user_name_index
   ret = fn(self, con, *args, **kw)
-2012-12-16 13:42:42,286 INFO  [ckan.model] CKAN database version upgraded: 0 -> 63
-2012-12-16 13:42:42,439 INFO  [ckan.model] Database initialised
+2012-12-19 08:11:52,968 INFO  [ckan.model] CKAN database version upgraded: 0 -> 63
+2012-12-19 08:11:53,115 INFO  [ckan.model] Database initialised
 Initialising DB: SUCCESS
 + '[' -f /tmp/kata-SKIP31 ']'
 + ckauser=ckan
@@ -318,10 +318,10 @@ sed: can't read /usr/lib/python2.6/ctypes/__init__.py: No such file or directory
 ++ '[' -n /bin/sh -o -n '' ']'
 ++ hash -r
 + paster --plugin=ckanext-harvest harvester initdb --config=/home/ckan/pyenv/src/ckan/development.ini
-2012-12-16 13:43:27,692 DEBUG [ckanext.kata] disable search
-2012-12-16 13:43:27,891 DEBUG [ckanext.harvest.model] Harvest tables defined in memory
-2012-12-16 13:43:28,807 DEBUG [ckanext.harvest.model] Harvest tables created
-2012-12-16 13:43:28,908 DEBUG [ckanext.harvest.model] Harvest tables already exist
+2012-12-19 08:12:49,118 DEBUG [ckanext.kata] disable search
+2012-12-19 08:12:49,301 DEBUG [ckanext.harvest.model] Harvest tables defined in memory
+2012-12-19 08:12:50,159 DEBUG [ckanext.harvest.model] Harvest tables created
+2012-12-19 08:12:50,235 DEBUG [ckanext.harvest.model] Harvest tables already exist
 
 DB tables created
 + '[' -f /tmp/kata-SKIP61 ']'
@@ -332,16 +332,16 @@ rabbitmq-server.
 + chkconfig rabbitmq-server on
 + '[' '!' -e /tmp/kata-SKIP-dbinit ']'
 + /home/ckan/pyenv/bin/paster --plugin=ckanext-harvest harvester source http://www.fsd.uta.fi/fi/aineistot/luettelo/fsd-ddi-records-uris-fi.txt DDI --config=/home/ckan/pyenv/src/ckan/development.ini
-2012-12-16 13:43:36,413 DEBUG [ckanext.kata] disable search
-2012-12-16 13:43:36,574 DEBUG [ckanext.harvest.model] Harvest tables defined in memory
-2012-12-16 13:43:36,577 DEBUG [ckanext.harvest.model] Harvest tables already exist
-2012-12-16 13:43:36,612 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://www.fsd.uta.fi/fi/aineistot/luettelo/fsd-ddi-records-uris-fi.txt', 'publisher_id': u'', 'type': u'DDI', 'active': True, 'config': None}
-2012-12-16 13:43:36,663 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 703aeeee-0143-4ee5-8220-9344fb65a5e0
-2012-12-16 13:43:36,694 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'703aeeee-0143-4ee5-8220-9344fb65a5e0'}
-2012-12-16 13:43:36,728 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 90214e95-0a01-4474-adb8-89a60ad89467
+2012-12-19 08:12:57,159 DEBUG [ckanext.kata] disable search
+2012-12-19 08:12:57,288 DEBUG [ckanext.harvest.model] Harvest tables defined in memory
+2012-12-19 08:12:57,290 DEBUG [ckanext.harvest.model] Harvest tables already exist
+2012-12-19 08:12:57,321 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://www.fsd.uta.fi/fi/aineistot/luettelo/fsd-ddi-records-uris-fi.txt', 'publisher_id': u'', 'type': u'DDI', 'active': True, 'config': None}
+2012-12-19 08:12:57,355 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 73cfccb9-d850-4881-b652-bed1762cfaf5
+2012-12-19 08:12:57,369 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'73cfccb9-d850-4881-b652-bed1762cfaf5'}
+2012-12-19 08:12:57,388 INFO  [ckanext.harvest.logic.action.create] Harvest job saved b628c13d-5024-4a62-aaa5-c04410900a62
 
 Created new harvest source:
-Source id: 703aeeee-0143-4ee5-8220-9344fb65a5e0
+Source id: 73cfccb9-d850-4881-b652-bed1762cfaf5
       url: http://www.fsd.uta.fi/fi/aineistot/luettelo/fsd-ddi-records-uris-fi.txt
      type: DDI
    active: True
@@ -352,16 +352,16 @@ publisher:
 There is 1 harvest source
 A new Harvest Job for this source has also been created
 + /home/ckan/pyenv/bin/paster --plugin=ckanext-harvest harvester source http://helda.helsinki.fi/oai/request OAI-PMH --config=/home/ckan/pyenv/src/ckan/development.ini
-2012-12-16 13:43:39,141 DEBUG [ckanext.kata] disable search
-2012-12-16 13:43:39,258 DEBUG [ckanext.harvest.model] Harvest tables defined in memory
-2012-12-16 13:43:39,262 DEBUG [ckanext.harvest.model] Harvest tables already exist
-2012-12-16 13:43:39,335 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://helda.helsinki.fi/oai/request', 'publisher_id': u'', 'type': u'OAI-PMH', 'active': True, 'config': None}
-2012-12-16 13:43:39,426 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 433ab610-80c6-4657-ad90-2664b7517d30
-2012-12-16 13:43:39,448 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'433ab610-80c6-4657-ad90-2664b7517d30'}
-2012-12-16 13:43:39,468 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 0c44bf36-c696-4391-83a5-64624d24a987
+2012-12-19 08:13:01,735 DEBUG [ckanext.kata] disable search
+2012-12-19 08:13:01,863 DEBUG [ckanext.harvest.model] Harvest tables defined in memory
+2012-12-19 08:13:01,865 DEBUG [ckanext.harvest.model] Harvest tables already exist
+2012-12-19 08:13:01,896 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://helda.helsinki.fi/oai/request', 'publisher_id': u'', 'type': u'OAI-PMH', 'active': True, 'config': None}
+2012-12-19 08:13:01,960 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 707d5f83-80a2-43b4-9662-e0e4bd6dffaa
+2012-12-19 08:13:02,005 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'707d5f83-80a2-43b4-9662-e0e4bd6dffaa'}
+2012-12-19 08:13:02,035 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 288fdd7a-91ee-492e-8d28-e99afefb3702
 
 Created new harvest source:
-Source id: 433ab610-80c6-4657-ad90-2664b7517d30
+Source id: 707d5f83-80a2-43b4-9662-e0e4bd6dffaa
       url: http://helda.helsinki.fi/oai/request
      type: OAI-PMH
    active: True
@@ -374,7 +374,7 @@ A new Harvest Job for this source has also been created
 + chkconfig supervisord on
 Stopping atd: [FAILED]
 Starting atd: [  OK  ]
-job 1 at 2012-12-16 13:46
+job 1 at 2012-12-19 08:16
 Starting shibd: [  OK  ]
 Starting httpd: [  OK  ]
 Starting supervisord: [  OK  ]
