@@ -19,4 +19,6 @@ mv development.ini.1 development.ini
 if [ \! -e /tmp/kata-SKIP-dbinit ]
 then
   paster --plugin=ckan db init
+else
+  paster --plugin=ckan db upgrade
 fi
