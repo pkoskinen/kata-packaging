@@ -8,5 +8,10 @@ then
 fi
 instloc=$1
 cd $instloc
-source pyenv/bin/activate
-paster --plugin=ckanext-harvest harvester initdb --config=$instloc/pyenv/src/ckan/development.ini
+if [ \! -e /tmp/kata-SKIP-dbinit ]
+then
+  source pyenv/bin/activate
+  paster --plugin=ckanext-harvest harvester initdb --config=$instloc/pyenv/src/ckan/development.ini
+else
+  # CKAN DB exists, no need to init harvester DB either
+fi 
