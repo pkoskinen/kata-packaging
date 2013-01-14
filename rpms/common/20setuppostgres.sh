@@ -39,19 +39,18 @@ then
   echo "some database configuration found, don't overwrite it"
   touch /tmp/kata-SKIP-dbinit
   service postgresql start
-  exit 0
 else
   rm -f /tmp/kata-SKIP-dbinit 2>/dev/null
+  service postgresql initdb
+  # su postgres ensures that the resulting file has the correct owner
+  su -c "patch -b -p2 -i ${patchdir}/pg_hba.conf.patch" postgres
+  popd >/dev/null
+  service postgresql start
+  chkconfig postgresql on
+  # following command from "postgres createuser -e -S -D -R -P ckanuser"
+  # couldn't find a way to avoid prompting for the password
+  cmd="CREATE ROLE ckanuser PASSWORD 'md5372712b8c6097730c3164ddd4f9275e0' NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN"
+  sleep 3    # following psql happened to fail sometimes, wait a moment
+  su -c 'psql -c "'"$cmd"'"' postgres
+  su -c "createdb -O ckanuser ckandb" postgres
 fi
-service postgresql initdb
-# su postgres ensures that the resulting file has the correct owner
-su -c "patch -b -p2 -i ${patchdir}/pg_hba.conf.patch" postgres
-popd >/dev/null
-service postgresql start
-chkconfig postgresql on
-# following command from "postgres createuser -e -S -D -R -P ckanuser"
-# couldn't find a way to avoid prompting for the password
-cmd="CREATE ROLE ckanuser PASSWORD 'md5372712b8c6097730c3164ddd4f9275e0' NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN"
-sleep 3    # following psql happened to fail sometimes, wait a moment 
-su -c 'psql -c "'"$cmd"'"' postgres
-su -c "createdb -O ckanuser ckandb" postgres
