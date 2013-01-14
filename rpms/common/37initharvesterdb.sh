@@ -14,4 +14,5 @@ then
   paster --plugin=ckanext-harvest harvester initdb --config=$instloc/pyenv/src/ckan/development.ini
 else
   # CKAN DB exists, no need to init harvester DB either
+  true
 fi 
