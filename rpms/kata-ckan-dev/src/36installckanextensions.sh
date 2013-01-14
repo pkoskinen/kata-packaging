@@ -30,7 +30,7 @@ theirurl='git+https://github.com/okfn/ckanext-harvest.git'
 oururl='git+https://github.com/kata-csc/ckanext-harvest.git'
 pip install -e ${oururl}${ext_harvest_version}#egg=ckanext-harvest
 pip install carrot
-paster --plugin=ckanext-harvest harvester initdb --config=development.ini
+$(dirname $0)/37initharvesterdb.sh $instloc
 # this script is dev only, so no problem with the password on github
 paster --plugin=ckan user add harvester password=harvester email=harvester@harvesting.none --config=development.ini
 paster --plugin=ckan sysadmin add harvester --config=development.ini
