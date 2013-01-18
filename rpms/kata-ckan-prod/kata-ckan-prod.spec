@@ -98,8 +98,7 @@ install 30setupckanprod.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 31setupckan-root.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 32setupapache.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 35setupharvester.sh $RPM_BUILD_ROOT/%{scriptdir}/
-install 36setupkataext.sh $RPM_BUILD_ROOT/%{scriptdir}/
-install 37initharvesterdb.sh $RPM_BUILD_ROOT/%{scriptdir}/
+install 37initextensionsdb.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 61setupsources.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 80backuphome.sh $RPM_BUILD_ROOT/%{scriptdir}/
 # misc scripts (keep them alphabetically ordered by filename)
@@ -141,8 +140,7 @@ rm -rf $RPM_BUILD_ROOT
 %{scriptdir}/31setupckan-root.sh
 %{scriptdir}/32setupapache.sh
 %{scriptdir}/35setupharvester.sh
-%{scriptdir}/36setupkataext.sh
-%{scriptdir}/37initharvesterdb.sh
+%{scriptdir}/37initextensionsdb.sh
 %{scriptdir}/61setupsources.sh
 %{scriptdir}/80backuphome.sh
 %{scriptdir}/myip.sh
@@ -178,8 +176,7 @@ su -c "%{scriptdir}/30setupckanprod.sh /home/%{ckanuser}" %{ckanuser}
 %{scriptdir}/31setupckan-root.sh %{ckanuser}
 %{scriptdir}/32setupapache.sh %{patchdir}
 su -c "%{scriptdir}/35setupharvester.sh /home/%{ckanuser}" %{ckanuser}
-su -c "%{scriptdir}/36setupkataext.sh /home/%{ckanuser}" %{ckanuser}
-su -c "%{scriptdir}/37initharvesterdb.sh /home/%{ckanuser}" %{ckanuser}
+su -c "%{scriptdir}/37initextensionsdb.sh /home/%{ckanuser}" %{ckanuser}
 
 # Lets do this last so our harvesters are correctly picked up by the daemons.
 cat /usr/share/kata-ckan-prod/setup-scripts/harvester.conf >> /etc/supervisord.conf

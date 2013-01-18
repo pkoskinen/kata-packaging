@@ -81,7 +81,7 @@ install 28setupckan.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 31setupckan-root.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 32setupapache.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 36installckanextensions.sh $RPM_BUILD_ROOT/%{scriptdir}/
-install 37initharvesterdb.sh $RPM_BUILD_ROOT/%{scriptdir}/
+install 37initextensionsdb.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 61setupsources.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 70checkpythonpackages.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 71storepythonpackages.sh $RPM_BUILD_ROOT/%{scriptdir}/
@@ -129,7 +129,7 @@ rm -rf $RPM_BUILD_ROOT
 %{scriptdir}/31setupckan-root.sh
 %{scriptdir}/32setupapache.sh
 %{scriptdir}/36installckanextensions.sh
-%{scriptdir}/37initharvesterdb.sh
+%{scriptdir}/37initextensionsdb.sh
 %{scriptdir}/61setupsources.sh
 %{scriptdir}/70checkpythonpackages.sh
 %{scriptdir}/71storepythonpackages.sh
@@ -182,7 +182,7 @@ su -c "%{scriptdir}/28setupckan.sh /home/%{ckanuser}" %{ckanuser}
 %{scriptdir}/31setupckan-root.sh %{ckanuser}
 %{scriptdir}/32setupapache.sh %{patchdir}
 su -c "%{scriptdir}/36installckanextensions.sh /home/%{ckanuser}" %{ckanuser}
-# no need to call 37initharvesterdb.sh here, previous script does it because
+# no need to call 37initextensionsdb.sh here, previous script does it because
 # it needs in in the middle
 # Let's configure supervisor now, so our harvesters are correctly picked up by
 # the daemons.

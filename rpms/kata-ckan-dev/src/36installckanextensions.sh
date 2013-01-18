@@ -30,10 +30,6 @@ theirurl='git+https://github.com/okfn/ckanext-harvest.git'
 oururl='git+https://github.com/kata-csc/ckanext-harvest.git'
 pip install -e ${oururl}${ext_harvest_version}#egg=ckanext-harvest
 pip install carrot
-$(dirname $0)/37initharvesterdb.sh $instloc
-# this script is dev only, so no problem with the password on github
-paster --plugin=ckan user add harvester password=harvester email=harvester@harvesting.none --config=development.ini
-paster --plugin=ckan sysadmin add harvester --config=development.ini
 
 pip install -e git+https://github.com/kata-csc/ckanext-urn.git${ext_urn_version}#egg=ckanext-urn
 
@@ -47,7 +43,12 @@ pip install -e git+git://github.com/kata-csc/ckanext-shibboleth.git${ext_shibbol
 patch -b -p2 -i /usr/share/kata-ckan-dev/setup-patches/who.ini.patch
 
 pip install -e git+git://github.com/kata-csc/ckanext-kata.git${ext_kata_version}#egg=ckanext-kata
-paster --plugin=ckanext-kata katacmd initdb --config=development.ini
+
+$(dirname $0)/37initextensionsdb.sh $instloc
+# this script is dev only, so no problem with the password on github
+paster --plugin=ckan user add harvester password=harvester email=harvester@harvesting.none --config=development.ini
+paster --plugin=ckan sysadmin add harvester --config=development.ini
+
 extensions="shibboleth harvest oaipmh_harvester synchronous_search oaipmh ddi_harvester sitemap kata kata_metadata"
 cp development.ini development.ini.backup.preext
 sed -i "/^ckan.plugins/s|$| $extensions|" development.ini

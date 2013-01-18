@@ -15,7 +15,7 @@ touch /tmp/kata-SKIP30   # 30setupckanprod.sh
 touch /tmp/kata-SKIP31   # 31setupckan-root.sh
 touch /tmp/kata-SKIP32   # 32setupckanservice.sh
 touch /tmp/kata-SKIP36   # 36installckanextensions.sh
-touch /tmp/kata-SKIP37   # 35initharvesterdb.sh
+touch /tmp/kata-SKIP37   # 37initextensionsdb.sh
 touch /tmp/kata-SKIP40   # 40configsolr.sh
 touch /tmp/kata-SKIP61   # 61setupsources.sh
 touch /tmp/kata-SKIP70   # 70checkpythonpackages.sh
