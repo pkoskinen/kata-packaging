@@ -47,7 +47,7 @@ pip install -e git+git://github.com/kata-csc/ckanext-shibboleth.git${ext_shibbol
 patch -b -p2 -i /usr/share/kata-ckan-dev/setup-patches/who.ini.patch
 
 pip install -e git+git://github.com/kata-csc/ckanext-kata.git${ext_kata_version}#egg=ckanext-kata
-
+paster --plugin=ckanext-kata katacmd initdb --config=development.ini
 extensions="shibboleth harvest oaipmh_harvester synchronous_search oaipmh ddi_harvester sitemap kata kata_metadata"
 cp development.ini development.ini.backup.preext
 sed -i "/^ckan.plugins/s|$| $extensions|" development.ini
