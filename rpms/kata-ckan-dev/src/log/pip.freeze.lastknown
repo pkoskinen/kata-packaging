@@ -27,11 +27,11 @@ beautifulsoup4==4.1.3
 carrot==0.10.7
 -e git+https://github.com/kata-csc/ckan.git@d386af64d0f6548e1dfc88118ef1cbb116077362#egg=ckan-dev
 ckanclient==0.10
--e git+https://github.com/kata-csc/ckanext-ddi.git@4123f0445e48b5dc5c35661a6ded9ca3ce32cb2e#egg=ckanext_ddi-dev
+-e git+https://github.com/kata-csc/ckanext-ddi.git@2215f72127369344af82efed73857aa3366494a7#egg=ckanext_ddi-dev
 -e git+https://github.com/kata-csc/ckanext-harvest.git@0bc30cce3247c449f7e6633f23e18d1362424044#egg=ckanext_harvest-dev
--e git://github.com/kata-csc/ckanext-kata.git@6faa9dade8a730dd864a77de2284f153a116694b#egg=ckanext_kata-dev
+-e git://github.com/kata-csc/ckanext-kata.git@b57a5bda295d68035c637792f46d957c4587163e#egg=ckanext_kata-dev
 -e git+https://github.com/kata-csc/ckanext-oaipmh.git@d7007e9af83111216ca12ec6bc677c6ac2b3b62a#egg=ckanext_oaipmh-dev
--e git://github.com/kata-csc/ckanext-shibboleth.git@40511ee3c1166d06364a7164229cc6043ca4787b#egg=ckanext_repoze_who_shibboleth-dev
+-e git://github.com/kata-csc/ckanext-shibboleth.git@cf9332e58c31dd7b25418d536ffbd160d06e86aa#egg=ckanext_repoze_who_shibboleth-dev
 -e git+https://github.com/kata-csc/ckanext-sitemap.git@1df31049473a7bd6f82967a5a9de8b93d8cc0616#egg=ckanext_sitemap-dev
 -e git+https://github.com/kata-csc/ckanext-urn.git@b48dfffb0f327aaaf21664ec0057f137ab58ce41#egg=ckanext_urn-dev
 decorator==3.4.0
