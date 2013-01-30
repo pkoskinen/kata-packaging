@@ -44,6 +44,11 @@ else
   service postgresql initdb
   # su postgres ensures that the resulting file has the correct owner
   su -c "patch -b -p2 -i ${patchdir}/pg_hba.conf.patch" postgres
+  su -c "patch -b -p2 -i ${patchdir}/postgresql.conf.patch" postgres
+  cp /tmp/kata-master.ini /opt/data/pgsql
+  su -c "python /usr/share/mcfg/tool/mcfg.py run /usr/share/mcfg/config/kata-template.ini /opt/data/pgsql/kata-master.ini 20" postgres
+  rm /opt/data/pgsql/kata-master.ini
+
   popd >/dev/null
   service postgresql start
   chkconfig postgresql on

@@ -53,6 +53,7 @@ diff -u patches/orig/development.ini patches/kata/development.ini >development.i
 diff -u patches/orig/httpd.conf patches/kata/httpd.conf >httpd.conf.patch || true
 diff -u patches/orig/ssl.conf patches/kata/ssl.conf >ssl.conf.patch || true
 diff -u patches/orig/pg_hba.conf patches/kata/pg_hba.conf >pg_hba.conf.patch || true
+diff -u patches/orig/postgresql.conf patches/kata/postgresql.conf >postgresql.conf.patch || true
 diff -u patches/orig/shib.conf patches/kata/shib.conf >shib.conf.patch || true
 diff -u patches/orig/shibboleth2.xml patches/kata/shibboleth2.xml >shibboleth2.xml.patch || true
 diff -u patches/orig/tomcat6.conf patches/kata/tomcat6.conf >tomcat6.conf.patch || true
@@ -97,6 +98,7 @@ install attribute-policy.xml.patch $RPM_BUILD_ROOT/%{patchdir}/
 install development.ini.patch $RPM_BUILD_ROOT/%{patchdir}/
 install httpd.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install pg_hba.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
+install postgresql.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install shib.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install shibboleth2.xml.patch $RPM_BUILD_ROOT/%{patchdir}/
 install ssl.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
@@ -143,6 +145,7 @@ rm -rf $RPM_BUILD_ROOT
 %{patchdir}/development.ini.patch
 %{patchdir}/httpd.conf.patch
 %{patchdir}/pg_hba.conf.patch
+%{patchdir}/postgresql.conf.patch
 %{patchdir}/shib.conf.patch
 %{patchdir}/shibboleth2.xml.patch
 %{patchdir}/ssl.conf.patch
