@@ -104,6 +104,7 @@ install tomcat6.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install who.ini.patch $RPM_BUILD_ROOT/%{patchdir}/
 
 # misc data/conf files (keep them alphabetically ordered by filename)
+install kataemail $RPM_BUILD_ROOT/etc/cron.daily/
 install kataharvesterjobs $RPM_BUILD_ROOT/etc/cron.daily/
 install kataindex $RPM_BUILD_ROOT/etc/cron.hourly/
 install harvester.conf $RPM_BUILD_ROOT/%{katadatadir}/
@@ -148,6 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 %{patchdir}/ssl.conf.patch
 %{patchdir}/tomcat6.conf.patch
 %{patchdir}/who.ini.patch
+%attr(0655,root,root)/etc/cron.daily/kataemail
 %attr(0655,root,root)/etc/cron.daily/kataharvesterjobs
 %attr(0655,root,root)/etc/cron.hourly/kataindex
 %{katadatadir}/harvester.conf
