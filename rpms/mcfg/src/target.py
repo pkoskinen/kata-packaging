@@ -1,6 +1,5 @@
 """This module contains only the class Target"""
 
-import itertools
 import logging
 import os
 import os.path
@@ -59,7 +58,7 @@ class Target:
                                 self.targetfile)
         else:
             logging.debug("   x: (no editors in this increment)")
-        for (num, edi) in itertools.imap(None, itertools.count(1), incr_edlist):
+        for (num, edi) in enumerate(incr_edlist, 1):
             in_file = None
             if backup:
                 in_file = "{0}.backup.{1}".format(self.targetfile, int(incr))
