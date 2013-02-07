@@ -50,6 +50,8 @@ else
   su -c "python /usr/share/mcfg/tool/mcfg.py run /usr/share/mcfg/config/kata-template.ini /opt/data/pgsql/kata-master.ini 20" postgres
   python /usr/share/mcfg/tool/mcfg.py switchuser postgres root
   rm /opt/data/pgsql/kata-master.ini
+  # mcfg should really preserve the file mode, but as it doesn't we fix it here
+  chmod og-r /opt/data/pgsql/data/postgresql.conf
 
   popd >/dev/null
   service postgresql start
