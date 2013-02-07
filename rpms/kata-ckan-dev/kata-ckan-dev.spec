@@ -164,6 +164,7 @@ useradd %{ckanuser}  # would need to be removed if ckanuser were changed to http
 su -c "%{scriptdir}/08getpyenv.sh /home/%{ckanuser}" %{ckanuser}
 su -c "%{scriptdir}/12getpythonpackages.sh /home/%{ckanuser}" %{ckanuser}
 %{scriptdir}/16configshibbolethsp.sh "/usr/share/kata-ckan-dev"
+%{scriptdir}/20setuppostgres.sh %{patchdir}
 %{scriptdir}/22configsolr.sh /home/%{ckanuser}
 %{scriptdir}/24setupapachessl.sh "/usr/share/kata-ckan-dev"
 cat > /home/%{ckanuser}/pyenv/bin/wsgi.py <<EOF
@@ -180,7 +181,6 @@ fileConfig(config_filepath)
 application = loadapp('config:%s' % config_filepath)
 EOF
 chmod 777 /home/%{ckanuser}/pyenv/bin/wsgi.py
-%{scriptdir}/20setuppostgres.sh %{patchdir}
 su -c "%{scriptdir}/28setupckan.sh /home/%{ckanuser}" %{ckanuser}
 %{scriptdir}/31setupckan-root.sh %{ckanuser}
 %{scriptdir}/32setupapache.sh %{patchdir}
