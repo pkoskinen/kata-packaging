@@ -20,6 +20,7 @@ hacked_path.extend(sys.path)
 sys.path = hacked_path
 
 import editor
+import mcfg
 import target
 
 class TestTarget(unittest.TestCase):
@@ -29,6 +30,7 @@ class TestTarget(unittest.TestCase):
         """unittest.TestCase.setUp makes pylint cry"""
         # make this independent of the cwd, always relative to our code
         self.test_files_dir = os.path.join(here, "files")
+        mcfg.Mcfg.set_log_level()
 
     def test_empty_edlist(self):
         """empty edlist is the trivial case"""
