@@ -10,7 +10,7 @@ Pairtree==0.7.1-T
 Paste==1.7.5.1
 PasteDeploy==1.5.0
 PasteScript==1.7.5
-Pygments==1.6rc1
+Pygments==1.6
 Pylons==0.9.7
 Routes==1.13
 SQLAlchemy==0.7.8
@@ -25,12 +25,12 @@ apachemiddleware==0.1.1
 argparse==1.2.1
 beautifulsoup4==4.1.3
 carrot==0.10.7
--e git+https://github.com/kata-csc/ckan.git@881a3ec013f6f9d161a7bb3375fd5496098abed6#egg=ckan-dev
+-e git+https://github.com/kata-csc/ckan.git@0ab94c4d24eb94ed10f0e1f5f83c2dd7e74a03e4#egg=ckan-dev
 ckanclient==0.10
 -e git+https://github.com/kata-csc/ckanext-ddi.git@9e6ff503ab5ffbd9527867f9cf3dc4d54d31c02e#egg=ckanext_ddi-dev
 -e git+https://github.com/kata-csc/ckanext-harvest.git@eda0ab77e1cb2ab92ac374f7904e48a2e2411348#egg=ckanext_harvest-dev
--e git://github.com/kata-csc/ckanext-kata.git@d629f18225d4e3e84d2ca7eaf16e9da7b094f7e4#egg=ckanext_kata-dev
--e git+https://github.com/kata-csc/ckanext-oaipmh.git@d7007e9af83111216ca12ec6bc677c6ac2b3b62a#egg=ckanext_oaipmh-dev
+-e git://github.com/kata-csc/ckanext-kata.git@5772df1b00260774c8434a9b7b925cad45d28dc2#egg=ckanext_kata-dev
+-e git+https://github.com/kata-csc/ckanext-oaipmh.git@b7eec58e800b55d6212555924c9cef4cc04d5e3c#egg=ckanext_oaipmh-dev
 -e git://github.com/kata-csc/ckanext-shibboleth.git@cf9332e58c31dd7b25418d536ffbd160d06e86aa#egg=ckanext_repoze_who_shibboleth-dev
 -e git+https://github.com/kata-csc/ckanext-sitemap.git@1df31049473a7bd6f82967a5a9de8b93d8cc0616#egg=ckanext_sitemap-dev
 -e git+https://github.com/kata-csc/ckanext-urn.git@b48dfffb0f327aaaf21664ec0057f137ab58ce41#egg=ckanext_urn-dev
