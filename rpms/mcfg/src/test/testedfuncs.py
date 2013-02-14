@@ -7,6 +7,10 @@ import unittest
 # we live in subdirectory test, so we need to import the code to be tested
 # from the parent directory. I don't like this hack, please suggest something
 # better (well, nose does it already, but maybe not everybody uses it)
+#
+# better suggestion: http://docs.python.org/2/whatsnew/2.5.html
+# see section "PEP 328: Absolute and Relative Imports", relative imports
+# never touch a working code, so not implemented now
 here=os.path.split( __file__ )[0]
 if here == '' :
   here = os.getcwd()
@@ -28,11 +32,11 @@ class TestEdfuncs(unittest.TestCase):
 
     # originally we used os.tempnam() here but it clutters up the test output
     # with a disturbing security warning.
-    oFileName = os.path.join( self.testFilesDir , "replaceSuccessful.out-" 
+    oFileName = os.path.join( self.testFilesDir , "replaceSuccessful.out-"
                                         + datetime.datetime.now().isoformat())
 
     # we could call the editor function in a easier way here, but let's
-    # simulate it once the way it will be done when the name comes from a 
+    # simulate it once the way it will be done when the name comes from a
     # text file
     func = getattr( edfuncs.Edfuncs , "replace" )
     func( iFileName , oFileName , 'toBeReplaced' , 'replacement' )
@@ -42,7 +46,7 @@ class TestEdfuncs(unittest.TestCase):
     if result:
       os.unlink( oFileName )
     else:
-      print >>sys.stderr , "\nUnexpected result in" , oFileName  
+      print >>sys.stderr , "\nUnexpected result in" , oFileName
     self.assertTrue( result )
 
 
@@ -52,7 +56,7 @@ class TestEdfuncs(unittest.TestCase):
 
   def test_copyFileSuccessful(self):
     iFileName = os.path.join(self.testFilesDir, "replace1.in" )
-    oFileName = os.path.join(self.testFilesDir, "copyFileSuccessful.out-" 
+    oFileName = os.path.join(self.testFilesDir, "copyFileSuccessful.out-"
                                         + datetime.datetime.now().isoformat())
     edfuncs.Edfuncs.copy_file("dummy", oFileName, "location", iFileName)
     result = filecmp.cmp(iFileName, oFileName)
@@ -63,7 +67,7 @@ class TestEdfuncs(unittest.TestCase):
   def test_CopyFileInputFileMissing(self):
     doesNotExist = "/tmp/seqwe/doesNotExist"
     args = ( "dummy", "dummy", "location",  doesNotExist )
-    self.assertRaises(IOError, edfuncs.Edfuncs.copy_file, *args) 
+    self.assertRaises(IOError, edfuncs.Edfuncs.copy_file, *args)
     # in Python 2.7 we could have used assertRaises as context manager,
     # in the first place, but we need to support Python 2.6
     # (of course this could be coded differently using try, but the
@@ -83,13 +87,13 @@ class TestEdfuncs(unittest.TestCase):
     try:
       edfuncs.Edfuncs.copy_file(*args)
     except IOError as exc:
-      self.assertEqual("Target file " + oFileName + " already exists", 
+      self.assertEqual("Target file " + oFileName + " already exists",
                        str(exc))
 
 
   def test_CopyFileWrongParameter(self):
     args = ( "dummy" , "dummy" , "wrong" , "dummy" )
-    self.assertRaises( ValueError , edfuncs.Edfuncs.copy_file, *args ) 
+    self.assertRaises( ValueError , edfuncs.Edfuncs.copy_file, *args )
     # see comment about assertRaises above
     try:
       edfuncs.Edfuncs.copy_file(*args)
