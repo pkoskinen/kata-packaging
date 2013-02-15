@@ -54,6 +54,32 @@ class TestEdfuncs(unittest.TestCase):
     self.assertRaises(IOError, edfuncs.Edfuncs.replace, "foo", "bar", "1", "2")
 
 
+  def test_replace_by_ip(self):
+    manualReferenceFile = "/tmp/test-myip"
+    # create that file manually, it must contain the current IP address without
+    # any white space
+    self.assertTrue(os.path.exists( manualReferenceFile))
+    iFileName = os.path.join( self.testFilesDir , "ip.in" )
+
+    # originally we used os.tempnam() here but it clutters up the test output
+    # with a disturbing security warning.
+    oFileName = os.path.join( self.testFilesDir , "ip.out-"
+                                        + datetime.datetime.now().isoformat())
+
+    # we could call the editor function in a easier way here, but let's
+    # simulate it once the way it will be done when the name comes from a
+    # text file
+    func = getattr( edfuncs.Edfuncs , "replace_by_ip" )
+    func( iFileName , oFileName , 'myip' , 'automatic' )
+
+    result = filecmp.cmp(oFileName, manualReferenceFile)
+    if result:
+      os.unlink( oFileName )
+    else:
+      print >>sys.stderr , "\nUnexpected result in" , oFileName
+    self.assertTrue( result )
+
+
   def test_copyFileSuccessful(self):
     iFileName = os.path.join(self.testFilesDir, "replace1.in" )
     oFileName = os.path.join(self.testFilesDir, "copyFileSuccessful.out-"

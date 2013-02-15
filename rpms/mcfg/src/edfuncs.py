@@ -33,6 +33,7 @@
 
 import os
 import os.path
+import subprocess
 
 class Edfuncs:
 
@@ -48,6 +49,17 @@ class Edfuncs:
       t.write( line )
     t.close()
     f.close()
+
+  @staticmethod
+  def replace_by_ip(fromFile, toFile, fromStr, dummy):
+    # we would really like to run subprocess.check_output here, but it
+    # does in exist in Python 2.6 (new in 2.7)
+    # even better would be to write myip.sh in Python, but the shell script
+    # exists and has been tested in real life for months...
+    proc= subprocess.Popen("/usr/share/mcfg/tool/myip.sh", 
+                           stdout=subprocess.PIPE)
+    out, err = proc.communicate()  
+    Edfuncs.replace(fromFile, toFile, fromStr, out.strip())
 
   @staticmethod
   def copy_file( fromFileDummy, toFile, parameter, copyFrom ):
