@@ -47,7 +47,7 @@ kata installation.
 
 %build
 # TODO: do we want to test all of them? requires mock
-python test/testedfuncs.py
+python test/testedfuncs.py TestEdfuncs
 
 
 %install
