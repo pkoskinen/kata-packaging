@@ -1,5 +1,4 @@
 #!/bin/sh
-# remember: we are not root here (%ckanuser from the spec file)
 set -x
 if [ -f /tmp/kata-SKIP36 ]
 then
@@ -51,6 +50,8 @@ paster --plugin=ckan user add harvester password=harvester email=harvester@harve
 paster --plugin=ckan sysadmin add harvester --config=/etc/kata.ini
 
 extensions="shibboleth harvest oaipmh_harvester synchronous_search oaipmh ddi_harvester sitemap kata kata_metadata"
-# backup commented out, we are not root and cannot create a new file in /etc
-# cp development.ini development.ini.backup.preext
+# first change in the ini template that will be packaged for prod
+cp development.ini development.ini.backup.preext
+sed -i "/^ckan.plugins/s|$| $extensions|" development.ini
+# second change in the ini file that is used in dev
 sed -i "/^ckan.plugins/s|$| $extensions|" /etc/kata.ini
