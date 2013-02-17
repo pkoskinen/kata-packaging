@@ -76,8 +76,5 @@ class Edfuncs:
 # so we do it aftetwards. Maybe we should get rid of the whole class
 # it serves no purpose at the moment  
 Edfuncs.replace.backup = True
+Edfuncs.replace_by_ip.backup = True
 Edfuncs.copy_file.backup = False
-
-
- 
-    
