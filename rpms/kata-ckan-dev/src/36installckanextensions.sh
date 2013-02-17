@@ -1,4 +1,5 @@
 #!/bin/sh
+# remember: we are not root here (%ckanuser from the spec file)
 set -x
 if [ -f /tmp/kata-SKIP36 ]
 then
@@ -46,9 +47,10 @@ pip install -e git+git://github.com/kata-csc/ckanext-kata.git${ext_kata_version}
 
 $(dirname $0)/37initextensionsdb.sh $instloc
 # this script is dev only, so no problem with the password on github
-paster --plugin=ckan user add harvester password=harvester email=harvester@harvesting.none --config=development.ini
-paster --plugin=ckan sysadmin add harvester --config=development.ini
+paster --plugin=ckan user add harvester password=harvester email=harvester@harvesting.none --config=/etc/kata.ini
+paster --plugin=ckan sysadmin add harvester --config=/etc/kata.ini
 
 extensions="shibboleth harvest oaipmh_harvester synchronous_search oaipmh ddi_harvester sitemap kata kata_metadata"
-cp development.ini development.ini.backup.preext
-sed -i "/^ckan.plugins/s|$| $extensions|" development.ini
+# backup commented out, we are not root and cannot create a new file in /etc
+# cp development.ini development.ini.backup.preext
+sed -i "/^ckan.plugins/s|$| $extensions|" /etc/kata.ini
