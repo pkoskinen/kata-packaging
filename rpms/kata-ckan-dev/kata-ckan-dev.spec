@@ -172,7 +172,7 @@ su -c "%{scriptdir}/12getpythonpackages.sh /home/%{ckanuser}" %{ckanuser}
 cat > /home/%{ckanuser}/pyenv/bin/wsgi.py <<EOF
 import os
 instance_dir = '/home/ckan'
-config_file = '/home/ckan/pyenv/src/ckan/development.ini'
+config_file = '/etc/kata.ini'
 pyenv_bin_dir = os.path.join(instance_dir, 'pyenv', 'bin')
 activate_this = os.path.join(pyenv_bin_dir, 'activate_this.py')
 execfile(activate_this, dict(__file__=activate_this))
