@@ -1,4 +1,5 @@
 #!/bin/sh
+# remember: we are not root here (%ckanuser from the spec file)
 set -x
 if [ -f /tmp/kata-SKIP36 ]
 then
@@ -54,4 +55,10 @@ extensions="shibboleth harvest oaipmh_harvester synchronous_search oaipmh ddi_ha
 cp development.ini development.ini.backup.preext
 sed -i "/^ckan.plugins/s|$| $extensions|" development.ini
 # second change in the ini file that is used in dev
-sed -i "/^ckan.plugins/s|$| $extensions|" /etc/kata.ini
+# cannot sed -i here because we have only write access to the file but not to
+# the directory (sed -i creates a tmp file in the same dir)
+# (redirection into existing file keeps ownership, protections
+# and selinux labeling)
+cp /etc/kata.ini /tmp/kata.ini
+sed -i "/^ckan.plugins/s|$| $extensions|" /tmp/kata.ini >/etc/kata.ini
+rm /tmp/kata.ini
