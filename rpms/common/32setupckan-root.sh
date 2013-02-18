@@ -14,7 +14,10 @@ chown ${ckauser}:${ckanuser} data sstore data_tree
 # Apache setup script will later change this again, but let's simulate the
 # previous behavior when these directories where still in the pyenv code
 # tree and created by ckanuser
-mkdir /var/log/ckan
+
+mkdir /var/log/ckan   # development.ini says this directory is used for
+                      # script output. don't think we have seen any yet
+                      # not sure what protections should be
 
 cp /home/ckan/pyenv/src/ckan/development.ini /etc/kata.ini
 python /usr/share/mcfg/tool/mcfg.py run /usr/share/mcfg/config/kata-template.ini /root/kata-master.ini 31
