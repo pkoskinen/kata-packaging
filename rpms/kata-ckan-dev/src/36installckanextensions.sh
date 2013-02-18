@@ -60,5 +60,5 @@ sed -i "/^ckan.plugins/s|$| $extensions|" development.ini
 # (redirection into existing file keeps ownership, protections
 # and selinux labeling)
 cp /etc/kata.ini /tmp/kata.ini
-sed -i "/^ckan.plugins/s|$| $extensions|" /tmp/kata.ini >/etc/kata.ini
+sed "/^ckan.plugins/s|$| $extensions|" /tmp/kata.ini >/etc/kata.ini
 rm /tmp/kata.ini
