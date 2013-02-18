@@ -1,0 +1,1 @@
+../../../rpms/common/myip.sh

@@ -32,8 +32,7 @@ $ sudo service rabbitmq-server stop
 $ sudo -s -u ckan
 $ cd
 $ source pyenv/bin/active
-$ cd pyenv/src/ckan
-$ paster --plugin=ckan search-index clear --config=development.ini
+$ paster --plugin=ckan search-index clear --config=/etc/kata.ini
 $ exit                               (exit from previous sudo)
 
 TODO: if we really need this step, above commands should be added

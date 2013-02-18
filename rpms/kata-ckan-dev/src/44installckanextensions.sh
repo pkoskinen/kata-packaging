@@ -1,8 +1,9 @@
 #!/bin/sh
+# remember: we are not root here (%ckanuser from the spec file)
 set -x
-if [ -f /tmp/kata-SKIP36 ]
+if [ -f /tmp/kata-SKIP44 ]
 then
-  echo "Skipping 36"
+  echo "Skipping 44"
   exit 0
 fi
 instloc=$1
@@ -44,11 +45,20 @@ patch -b -p2 -i /usr/share/kata-ckan-dev/setup-patches/who.ini.patch
 
 pip install -e git+git://github.com/kata-csc/ckanext-kata.git${ext_kata_version}#egg=ckanext-kata
 
-$(dirname $0)/37initextensionsdb.sh $instloc
+$(dirname $0)/48initextensionsdb.sh $instloc
 # this script is dev only, so no problem with the password on github
-paster --plugin=ckan user add harvester password=harvester email=harvester@harvesting.none --config=development.ini
-paster --plugin=ckan sysadmin add harvester --config=development.ini
+paster --plugin=ckan user add harvester password=harvester email=harvester@harvesting.none --config=/etc/kata.ini
+paster --plugin=ckan sysadmin add harvester --config=/etc/kata.ini
 
 extensions="shibboleth harvest oaipmh_harvester synchronous_search oaipmh ddi_harvester sitemap kata kata_metadata"
+# first change in the ini template that will be packaged for prod
 cp development.ini development.ini.backup.preext
 sed -i "/^ckan.plugins/s|$| $extensions|" development.ini
+# second change in the ini file that is used in dev
+# cannot sed -i here because we have only write access to the file but not to
+# the directory (sed -i creates a tmp file in the same dir)
+# (redirection into existing file keeps ownership, protections
+# and selinux labeling)
+cp /etc/kata.ini /tmp/kata.ini
+sed "/^ckan.plugins/s|$| $extensions|" /tmp/kata.ini >/etc/kata.ini
+rm /tmp/kata.ini
