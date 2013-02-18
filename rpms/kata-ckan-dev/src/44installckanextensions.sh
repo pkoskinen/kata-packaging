@@ -45,7 +45,7 @@ patch -b -p2 -i /usr/share/kata-ckan-dev/setup-patches/who.ini.patch
 
 pip install -e git+git://github.com/kata-csc/ckanext-kata.git${ext_kata_version}#egg=ckanext-kata
 
-$(dirname $0)/37initextensionsdb.sh $instloc
+$(dirname $0)/48initextensionsdb.sh $instloc
 # this script is dev only, so no problem with the password on github
 paster --plugin=ckan user add harvester password=harvester email=harvester@harvesting.none --config=/etc/kata.ini
 paster --plugin=ckan sysadmin add harvester --config=/etc/kata.ini
