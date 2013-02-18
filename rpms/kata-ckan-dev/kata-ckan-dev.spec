@@ -80,6 +80,7 @@ install 22configsolr.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 24setupapachessl.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 28setupckan.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 32setupckan-root.sh $RPM_BUILD_ROOT/%{scriptdir}/
+install 36initckandb.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 40setupapache.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 44installckanextensions.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 48initextensionsdb.sh $RPM_BUILD_ROOT/%{scriptdir}/
@@ -130,6 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 %{scriptdir}/24setupapachessl.sh
 %{scriptdir}/28setupckan.sh
 %{scriptdir}/32setupckan-root.sh
+%{scriptdir}/36initckandb.sh
 %{scriptdir}/40setupapache.sh
 %{scriptdir}/44installckanextensions.sh
 %{scriptdir}/48initextensionsdb.sh
@@ -185,6 +187,7 @@ EOF
 chmod 777 /home/%{ckanuser}/pyenv/bin/wsgi.py
 su -c "%{scriptdir}/28setupckan.sh /home/%{ckanuser}" %{ckanuser}
 %{scriptdir}/32setupckan-root.sh %{ckanuser}
+su -c "%{scriptdir}/36initckandb.sh /home/%{ckanuser}" %{ckanuser}
 %{scriptdir}/40setupapache.sh %{patchdir}
 su -c "%{scriptdir}/44installckanextensions.sh /home/%{ckanuser}" %{ckanuser}
 # no need to call 48initextensionsdb.sh here, previous script does it because

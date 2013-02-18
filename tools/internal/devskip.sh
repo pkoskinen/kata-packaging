@@ -12,8 +12,8 @@ touch /tmp/kata-SKIP20   # 20setuppostgres.sh
 touch /tmp/kata-SKIP22   # 22onfigsolr.sh
 touch /tmp/kata-SKIP24   # 24setupapachessl.sh
 touch /tmp/kata-SKIP28   # 28setupckan.sh
-touch /tmp/kata-SKIP30   # 30setupckanprod.sh
 touch /tmp/kata-SKIP32   # 32setupckan-root.sh
+touch /tmp/kata-SKIP36   # 36initckandb.sh
 touch /tmp/kata-SKIP40   # 32setupapache.sh
 touch /tmp/kata-SKIP44   # 44installckanextensions.sh
 touch /tmp/kata-SKIP48   # 48initextensionsdb.sh

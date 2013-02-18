@@ -26,8 +26,3 @@ patch -b -p2 -i /usr/share/kata-ckan-dev/setup-patches/development.ini.patch
 mv development.ini development.ini.patched
 sed -e "/%%GENERATED%%/ r /tmp/development.ini.generated-only" -e "/%%GENERATED%%/ d" development.ini.patched > development.ini
 # patching done...
-
-if [ \! -e /tmp/kata-SKIP-dbinit ]
-then
-  paster --plugin=ckan db init
-fi
