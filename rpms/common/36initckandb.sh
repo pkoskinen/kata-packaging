@@ -1,9 +1,9 @@
 #! /bin/sh
 # remember: we are not root here (%ckanuser from the spec file)
 set -x
-if [ -f /tmp/kata-SKIP30 ]
+if [ -f /tmp/kata-SKIP36 ]
 then
-  echo "Skipping 30"
+  echo "Skipping 36"
   exit 0
 fi
 instloc=$1
@@ -12,7 +12,7 @@ source pyenv/bin/activate
 cd pyenv/src/ckan
 if [ \! -e /tmp/kata-SKIP-dbinit ]
 then
-  paster --plugin=ckan db init
+  paster --plugin=ckan db init --config=/etc/kata.ini
 else
-  paster --plugin=ckan db upgrade
+  paster --plugin=ckan db upgrade --config=/etc/kata.ini
 fi
