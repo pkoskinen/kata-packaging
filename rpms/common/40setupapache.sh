@@ -23,7 +23,9 @@ chown ckan:apache /home/ckan/pyenv/ckan.log
 chmod g+w /home/ckan/pyenv/ckan.log
 chown -R ckan:apache /opt/data/ckan
 chcon -R --type=httpd_sys_content_t /opt/data/ckan
-chmod -R g+w /opt/data/ckan/{data,sstore}
+chmod -R g+w /opt/data/ckan/{data,sstore,data_tree}
+mkdir /var/www/.orange
+chown apache:apache /var/www/.orange
 # TODO: We should not hack other packages' files
 # what will happen when Python gets a security update???
 # well, as long as we do it only in dev it doesn't matter, because

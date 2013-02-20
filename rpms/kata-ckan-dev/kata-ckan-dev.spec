@@ -10,12 +10,16 @@ License: AGPLv3+
 #Url: http://not.sure.yet
 Source0: kata-ckan-dev-%{version}.tgz
 Requires: apache-solr
+Requires: catdoc
 Requires: gcc
+Requires: gcc-c++
 Requires: git
 Requires: libxslt-devel
 Requires: mcfg
 Requires: mod_ssl
 Requires: mod_wsgi
+Requires: numpy
+Requires: odt2txt
 Requires: patch
 Requires: policycoreutils-python
 Requires: postgresql-devel
@@ -24,6 +28,7 @@ Requires: python-devel
 Requires: rabbitmq-server
 Requires: shibboleth
 Requires: supervisor
+Requires: w3m
 Conflicts: kata-ckan-prod
 # Fedora documentation says one should use...
 #BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
