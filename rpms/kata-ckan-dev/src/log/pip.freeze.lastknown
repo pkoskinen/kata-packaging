@@ -6,6 +6,8 @@ Genshi==0.6
 Jinja2==2.6
 Mako==0.7.3
 MarkupSafe==0.15
+Orange==2.6
+Orange-Text==1.2a1
 Pairtree==0.7.1-T
 Paste==1.7.5.1
 PasteDeploy==1.5.0
@@ -29,8 +31,8 @@ carrot==0.10.7
 ckanclient==0.10
 -e git+https://github.com/kata-csc/ckanext-ddi.git@ba8686c81e1488b72a5f2e48f483d8e9962a74e8#egg=ckanext_ddi-dev
 -e git+https://github.com/kata-csc/ckanext-harvest.git@eda0ab77e1cb2ab92ac374f7904e48a2e2411348#egg=ckanext_harvest-dev
--e git://github.com/kata-csc/ckanext-kata.git@f84c3ff036f668c2676828e47e5ba8e6a84e5a12#egg=ckanext_kata-dev
--e git+https://github.com/kata-csc/ckanext-oaipmh.git@2fd2e3b239472110d91d8e3dde86d66db8d6d924#egg=ckanext_oaipmh-dev
+-e git://github.com/kata-csc/ckanext-kata.git@96ae0ab2a59ee5b1e0525217d81635e46d79d4e3#egg=ckanext_kata-dev
+-e git+https://github.com/kata-csc/ckanext-oaipmh.git@b65108778174a98a4736ef77e82c8d32f6bee9cf#egg=ckanext_oaipmh-dev
 -e git://github.com/kata-csc/ckanext-shibboleth.git@cf9332e58c31dd7b25418d536ffbd160d06e86aa#egg=ckanext_repoze_who_shibboleth-dev
 -e git+https://github.com/kata-csc/ckanext-sitemap.git@1df31049473a7bd6f82967a5a9de8b93d8cc0616#egg=ckanext_sitemap-dev
 -e git+https://github.com/kata-csc/ckanext-urn.git@b48dfffb0f327aaaf21664ec0057f137ab58ce41#egg=ckanext_urn-dev
@@ -40,6 +42,7 @@ iso8601==0.1.4
 isodate==0.4.9
 lxml==3.1.0
 nose==1.2.1
+numpy==1.7.0
 ofs==0.4.1
 psycopg2==2.4.5
 pycountry==0.14.7
@@ -53,7 +56,7 @@ repoze.who==1.0.19
 repoze.who-friendlyform==1.0.8
 repoze.who.plugins.openid==0.5.3
 requests==0.14.0
-simplejson==3.0.7
+simplejson==3.0.8
 six==1.2.0
 solrpy==0.9.5
 sqlalchemy-migrate==0.7.2
