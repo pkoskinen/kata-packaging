@@ -18,10 +18,12 @@ License: AGPLv3+
 #Url: http://not.sure.yet
 Source: kata-ckan-prod-%{version}.tgz
 Requires: apache-solr
+Requires: catdoc
 Requires: libxslt
 Requires: mcfg
 Requires: mod_wsgi
 Requires: mod_ssl
+Requires: odt2txt
 Requires: patch
 Requires: policycoreutils-python
 Requires: postgresql
@@ -29,6 +31,7 @@ Requires: postgresql-server
 Requires: rabbitmq-server
 Requires: shibboleth
 Requires: supervisor
+Requires: w3m
 Conflicts: kata-ckan-dev
 BuildRequires: kata-ckan-dev
 # Fedora documentation says one should use...
@@ -78,6 +81,10 @@ sudo chown ${me} $RPM_BUILD_ROOT/home
 sudo chown ${me} $RPM_BUILD_ROOT/home/%{ckanuser}
 find $RPM_BUILD_ROOT/home/%{ckanuser} -name .git -print0 | xargs -0 rm -rf
 find $RPM_BUILD_ROOT/home/%{ckanuser} -name .svn -print0 | xargs -0 rm -rf
+
+# Remove the symlink to orange and actually copy the file over
+rm $RPM_BUILD_ROOT/home/%{ckanuser}/pyenv/lib/python2.6/site-packages/Orange/liborange.so
+cp $RPM_BUILD_ROOT/home/%{ckanuser}/pyenv/lib/python2.6/site-packages/Orange/orange.so $RPM_BUILD_ROOT/home/%{ckanuser}/pyenv/lib/python2.6/site-packages/Orange/liborange.so
 
 install -d $RPM_BUILD_ROOT/%{scriptdir}
 install -d $RPM_BUILD_ROOT/%{patchdir}
