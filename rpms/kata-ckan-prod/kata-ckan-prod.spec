@@ -102,7 +102,6 @@ install 48initextensionsdb.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 61setupsources.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 80backuphome.sh $RPM_BUILD_ROOT/%{scriptdir}/
 # misc scripts (keep them alphabetically ordered by filename)
-install myip.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install runharvester.sh $RPM_BUILD_ROOT/%{scriptdir}/
 # patches (keep them alphabetically ordered by filename)
 install attribute-map.xml.patch $RPM_BUILD_ROOT/%{patchdir}/
@@ -144,7 +143,6 @@ rm -rf $RPM_BUILD_ROOT
 %{scriptdir}/48initextensionsdb.sh
 %{scriptdir}/61setupsources.sh
 %{scriptdir}/80backuphome.sh
-%{scriptdir}/myip.sh
 %{scriptdir}/runharvester.sh
 %{patchdir}/httpd.conf.patch
 %{patchdir}/pg_hba.conf.patch

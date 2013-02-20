@@ -90,7 +90,6 @@ install 71storepythonpackages.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 80backuphome.sh $RPM_BUILD_ROOT/%{scriptdir}/
 
 # misc scripts (keep them alphabetically ordered by filename)
-install myip.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install runharvester.sh $RPM_BUILD_ROOT/%{katadatadir}/
 
 # patches (keep them alphabetically ordered by filename)
@@ -139,7 +138,6 @@ rm -rf $RPM_BUILD_ROOT
 %{scriptdir}/70checkpythonpackages.sh
 %{scriptdir}/71storepythonpackages.sh
 %{scriptdir}/80backuphome.sh
-%{scriptdir}/myip.sh
 
 # sic! following script in datadir
 %{katadatadir}/runharvester.sh

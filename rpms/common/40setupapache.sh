@@ -9,11 +9,7 @@ patchdir="$1"
 service httpd stop
 pushd /etc/httpd/conf >/dev/null
 patch -b -p2 -i ${patchdir}/httpd.conf.patch
-mv httpd.conf httpd.conf.step1
-myipcmd=$(dirname $0)/myip.sh
-myip=$($myipcmd)
-sed -e "s/%%MYIP%%/${myip}/" httpd.conf.step1 > httpd.conf
-/usr/bin/python /usr/share/mcfg/tool/mcfg.py run /usr/share/mcfg/config/kata-template.ini /root/kata-master.ini 40
+python /usr/share/mcfg/tool/mcfg.py run /usr/share/mcfg/config/kata-template.ini /root/kata-master.ini 40
 popd >/dev/null
 chkconfig httpd on
 chown -R ckan:apache /home/ckan/pyenv
