@@ -3,7 +3,7 @@
 # Purpose: Comparing contents of Solr index to contents of DB 
 #
 #          - input file can be created using script get-ids-from-solr.py
-#          - resulting test_ids contents can be compated to package(id) 
+#          - resulting test_ids contents can be compared to package(id) 
 #            using psql
 #
 import sqlalchemy
