@@ -10,6 +10,7 @@ License: AGPLv3+
 #Url: http://not.sure.yet
 Source0: kata-ckan-dev-%{version}.tgz
 Requires: apache-solr
+Requires: bzr
 Requires: catdoc
 Requires: gcc
 Requires: gcc-c++

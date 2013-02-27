@@ -36,6 +36,8 @@ pip install -e git+https://github.com/kata-csc/ckanext-urn.git${ext_urn_version}
 
 pip install -e git+https://github.com/kata-csc/ckanext-oaipmh.git${ext_oaipmh_version}#egg=ckanext-oaipmh
 
+# Install bazaar version of BeautifulSoup, counter the DDI3 bug.
+pip install -e bzr+lp:beautifulsoup#egg=BeautifulSoup
 pip install -e git+https://github.com/kata-csc/ckanext-ddi.git${ext_ddi_version}#egg=ckanext-ddi
 
 pip install -e git+https://github.com/kata-csc/ckanext-sitemap.git${ext_sitemap_version}#egg=ckanext-sitemap
@@ -50,7 +52,7 @@ $(dirname $0)/48initextensionsdb.sh $instloc
 paster --plugin=ckan user add harvester password=harvester email=harvester@harvesting.none --config=/etc/kata.ini
 paster --plugin=ckan sysadmin add harvester --config=/etc/kata.ini
 
-extensions="shibboleth harvest oaipmh_harvester synchronous_search oaipmh ddi_harvester sitemap kata kata_metadata"
+extensions="shibboleth harvest oaipmh_harvester synchronous_search oaipmh ddi_harvester sitemap kata kata_metadata ddi3_harvester"
 # first change in the ini template that will be packaged for prod
 cp development.ini development.ini.backup.preext
 sed -i "/^ckan.plugins/s|$| $extensions|" development.ini
