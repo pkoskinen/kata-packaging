@@ -56,10 +56,7 @@ else
   popd >/dev/null
   service postgresql start
   chkconfig postgresql on
-  # following command from "createuser -e -S -D -R -P apache"
-  # couldn't find a way to avoid prompting for the password
-  cmd="CREATE ROLE apache PASSWORD 'md51a73448da6ae7020e2f1a4740174a7cd' NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN"
-  sleep 3    # following psql happened to fail sometimes, wait a moment
-  su -c 'psql -c "'"$cmd"'"' postgres
+  sleep 3    # creating the user happened to fail sometimes, wait a moment
+  su -c "createuser -S -D -R apache" postgres
   su -c "createdb -O apache ckandb" postgres
 fi
