@@ -16,3 +16,5 @@ service tomcat6 start
 # only apache account has access to the DB (besides postgres admin), allow it
 # to run setup scripts and cron jobs
 chsh -s /bin/bash apache
+mkdir /home/ckan
+chown apache:apache /home/ckan
