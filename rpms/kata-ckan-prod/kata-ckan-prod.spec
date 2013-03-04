@@ -125,6 +125,7 @@ install tomcat6.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install kataemail $RPM_BUILD_ROOT/etc/cron.daily/
 install kataharvesterjobs $RPM_BUILD_ROOT/etc/cron.daily/
 install kataindex $RPM_BUILD_ROOT/etc/cron.hourly/
+install katatracking $RPM_BUILD_ROOT/etc/cron.daily/
 install harvester.conf $RPM_BUILD_ROOT/%{scriptdir}/
 install kata.conf $RPM_BUILD_ROOT/etc/httpd/conf.d/
 install postgresql $RPM_BUILD_ROOT/etc/sysconfig/pgsql/
