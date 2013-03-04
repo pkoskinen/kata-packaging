@@ -162,6 +162,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(0655,root,root)/etc/cron.daily/kataemail
 %attr(0655,root,root)/etc/cron.daily/kataharvesterjobs
 %attr(0655,root,root)/etc/cron.hourly/kataindex
+%attr(0655,root,root)/etc/cron.daily/katatracking
 %{katadatadir}/harvester.conf
 /etc/httpd/conf.d/kata.conf
 %{katadatadir}/pip.freeze.lastknown
