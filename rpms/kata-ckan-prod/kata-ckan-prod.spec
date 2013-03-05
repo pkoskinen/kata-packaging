@@ -202,9 +202,7 @@ at -f %{scriptdir}/runharvester.sh 'now + 3 minute'
 service shibd start
 service httpd start
 service supervisord start
-# Pick up the cron job that was installed. (for unknown reasons cron
-# did not do it automatically)
-service crond reload
+service crond start
 
 
 %preun
