@@ -80,7 +80,10 @@ sudo find /home/%{ckanuser}/pyenv -depth | sudo cpio -pdm --owner ${me}: $RPM_BU
 sudo chown ${me} $RPM_BUILD_ROOT/home
 sudo chown ${me} $RPM_BUILD_ROOT/home/%{ckanuser}
 find $RPM_BUILD_ROOT/home/%{ckanuser} -name .git -print0 | xargs -0 rm -rf
+find $RPM_BUILD_ROOT/home/%{ckanuser} -name .gitignore -print0 | xargs -0 rm -f
 find $RPM_BUILD_ROOT/home/%{ckanuser} -name .svn -print0 | xargs -0 rm -rf
+find $RPM_BUILD_ROOT/home/%{ckanuser} -name .bzr -print0 | xargs -0 rm -rf
+find $RPM_BUILD_ROOT/home/%{ckanuser} -name .bzrignore -print0 | xargs -0 rm -f
 
 # Remove the symlink to orange and actually copy the file over
 rm $RPM_BUILD_ROOT/home/%{ckanuser}/pyenv/lib/python2.6/site-packages/Orange/liborange.so
