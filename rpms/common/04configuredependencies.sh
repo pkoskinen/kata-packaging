@@ -8,6 +8,14 @@ then
 fi
 patchdir=$1
 
+# the rpm package has installed several jobs to cron.daily
+# because ckan is not yet readily installed they will fail if run now
+# stop crond here to avoid this (actually there is a small window
+# of opprotunity that it has already happened. It's not really fatal,
+# but a nuisance because root will receive mail. This typically happened
+# in dev.rpm installation, because dev installation lasts 55-58 minutes
+service crond stop
+
 service tomcat6 stop
 cd /etc/tomcat6
 patch -b -p2 -i "${patchdir}/tomcat6.conf.patch"

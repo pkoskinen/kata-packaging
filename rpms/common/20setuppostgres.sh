@@ -29,6 +29,16 @@ then
   restorecon /opt/data/pgsql/data
   semanage fcontext -a -t var_lib_t "/opt/data/pgsql/backups(/.*)?"
   restorecon /opt/data/pgsql/backups
+  # the following seems to be necessary to work around a bug(?) in 
+  # postgres setup
+  # normally initdb takes care of this, but if the DB directory has been
+  # changed to a non-standard location it does not work. The DB still works
+  # but pgstartup.log will never be written. Better to have the log just in case
+  # something goes wrong
+  touch /opt/data/pgsql/pgstartup.log
+  chown postgres:postgres /opt/data/pgsql/pgstartup.log
+  semanage fcontext -a -t postgresql_db_t /opt/data/pgsql/pgstartup.log
+  restorecon /opt/data/pgsql/pgstartup.log
 fi
 pushd /opt/data/pgsql/data >/dev/null
 datafiles=$(ls | wc -l)

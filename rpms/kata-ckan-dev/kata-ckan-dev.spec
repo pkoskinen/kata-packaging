@@ -10,6 +10,7 @@ License: AGPLv3+
 #Url: http://not.sure.yet
 Source0: kata-ckan-dev-%{version}.tgz
 Requires: apache-solr
+Requires: bzr
 Requires: catdoc
 Requires: gcc
 Requires: gcc-c++
@@ -112,6 +113,7 @@ install who.ini.patch $RPM_BUILD_ROOT/%{patchdir}/
 install kataemail $RPM_BUILD_ROOT/etc/cron.daily/
 install kataharvesterjobs $RPM_BUILD_ROOT/etc/cron.daily/
 install kataindex $RPM_BUILD_ROOT/etc/cron.hourly/
+install katatracking $RPM_BUILD_ROOT/etc/cron.daily/
 install harvester.conf $RPM_BUILD_ROOT/%{katadatadir}/
 install kata.conf $RPM_BUILD_ROOT/etc/httpd/conf.d/
 install log/pip.freeze.lastknown $RPM_BUILD_ROOT/%{katadatadir}/
@@ -157,6 +159,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(0655,root,root)/etc/cron.daily/kataemail
 %attr(0655,root,root)/etc/cron.daily/kataharvesterjobs
 %attr(0655,root,root)/etc/cron.hourly/kataindex
+%attr(0655,root,root)/etc/cron.daily/katatracking
 %{katadatadir}/harvester.conf
 /etc/httpd/conf.d/kata.conf
 %{katadatadir}/pip.freeze.lastknown
@@ -203,8 +206,7 @@ at -f %{katadatadir}/runharvester.sh 'now + 3 minute'
 service shibd start
 service httpd start
 service supervisord start
-# Pick up the cron job that was installed.
-service crond reload
+service crond start
 # run this last so the user has a chance to see the output
 su -c "%{scriptdir}/70checkpythonpackages.sh /home/ckan %{katadatadir}/pip.freeze.lastknown" apache
 # well, actually it was last but one, but we still need to do this as root
