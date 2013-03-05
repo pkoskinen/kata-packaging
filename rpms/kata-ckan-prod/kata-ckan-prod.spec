@@ -141,7 +141,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%attr(-,apache,apache) /home/apache/pyenv
+%attr(-,apache,apache) /home/ckan/pyenv
 %{scriptdir}/04configuredependencies.sh
 %{scriptdir}/16configshibbolethsp.sh
 %{scriptdir}/20setuppostgres.sh
