@@ -32,15 +32,15 @@ cat > $RPM_BUILD_ROOT/usr/share/tomcat6/conf/Catalina/localhost/solr.xml <<EOF
 EOF
 install -d $RPM_BUILD_ROOT/opt/data/solr/conf/lang
 cat > $RPM_BUILD_ROOT/opt/data/solr/conf/lang/stopwords_fi.txt << EOF
- | Even more originally https://gitorious.org/yacy/rc1/blobs/1be0025a9ca151ff08a2cefd35c7ee0ed3e1c39d/defaults/solr/lang/stopwords_fi.txt
- | From svn.tartarus.org/snowball/trunk/website/algorithms/finnish/stop.txt
- | This file is distributed under the BSD License.
- | See http://snowball.tartarus.org/license.php
- | Also see http://www.opensource.org/licenses/bsd-license.html
- |  - Encoding was converted to UTF-8.
- |  - This notice was added.
+# From http://trac.foswiki.org/browser/trunk/SolrPlugin/solr/multicore/conf/stopwords-fi.txt
+# This file is distributed under the BSD License.
+# See http://snowball.tartarus.org/license.php
+# Also see http://www.opensource.org/licenses/bsd-license.html
+#  - Encoding was converted to UTF-8.
+#  - This notice was added.
+#  - The format was modified to the Solr stopwords format
  
-| forms of BE
+# forms of BE
 
 olla
 olen
@@ -49,7 +49,7 @@ on
 olemme
 olette
 ovat
-ole        | negative form
+ole
 
 oli
 olisi
@@ -66,67 +66,288 @@ olivat
 ollut
 olleet
 
-en         | negation
+# negation
+en
 et
 ei
 emme
 ette
 eivät
 
-|Nom   Gen    Acc    Part   Iness   Elat    Illat  Adess   Ablat   Allat   Ess    Trans
-minä   minun  minut  minua  minussa minusta minuun minulla minulta minulle               | I
-sinä   sinun  sinut  sinua  sinussa sinusta sinuun sinulla sinulta sinulle               | you
-hän    hänen  hänet  häntä  hänessä hänestä häneen hänellä häneltä hänelle               | he she
-me     meidän meidät meitä  meissä  meistä  meihin meillä  meiltä  meille                | we
-te     teidän teidät teitä  teissä  teistä  teihin teillä  teiltä  teille                | you
-he     heidän heidät heitä  heissä  heistä  heihin heillä  heiltä  heille                | they
+# order is generally Nom,Gen,Acc,Part,Iness,Elat,Illat,Adess,Ablat,Allat,Ess,Trans                        
+# I
+minä
+minun
+minut
+minua
+minussa
+minusta
+minuun
+minulla
+minulta
+minulle
 
-tämä   tämän         tätä   tässä   tästä   tähän  tallä   tältä   tälle   tänä   täksi  | this
-tuo    tuon          tuotä  tuossa  tuosta  tuohon tuolla  tuolta  tuolle  tuona  tuoksi | that
-se     sen           sitä   siinä   siitä   siihen sillä   siltä   sille   sinä   siksi  | it
-nämä   näiden        näitä  näissä  näistä  näihin näillä  näiltä  näille  näinä  näiksi | these
-nuo    noiden        noita  noissa  noista  noihin noilla  noilta  noille  noina  noiksi | those
-ne     niiden        niitä  niissä  niistä  niihin niillä  niiltä  niille  niinä  niiksi | they
+# You
+sinä
+sinun
+sinut
+sinua
+sinussa
+sinusta
+sinuun
+sinulla
+sinulta
+sinulle
 
-kuka   kenen kenet   ketä   kenessä kenestä keneen kenellä keneltä kenelle kenenä keneksi| who
-ketkä  keiden ketkä  keitä  keissä  keistä  keihin keillä  keiltä  keille  keinä  keiksi | (pl)
-mikä   minkä minkä   mitä   missä   mistä   mihin  millä   miltä   mille   minä   miksi  | which what
-mitkä                                                                                    | (pl)
+# he she
+hän
+hänen
+hänet
+häntä
+hänessä
+hänestä
+häneen
+hänellä
+häneltä
+hänelle
 
-joka   jonka         jota   jossa   josta   johon  jolla   jolta   jolle   jona   joksi  | who which
-jotka  joiden        joita  joissa  joista  joihin joilla  joilta  joille  joina  joiksi | (pl)
+# we
+me
+meidän
+meidät
+meitä
+meissä
+meistä
+meihin
+meillä
+meiltä
+meille
 
-| conjunctions
+# you
+te
+teidän
+teidät
+teitä
+teissä
+teistä
+teihin
+teillä
+teiltä
+teille
 
-että   | that
-ja     | and
-jos    | if
-koska  | because
-kuin   | than
-mutta  | but
-niin   | so
-sekä   | and
-sillä  | for
-tai    | or
-vaan   | but
-vai    | or
-vaikka | although
+# they
+he
+heidän
+heidät
+heitä
+heissä
+heistä
+heihin
+heillä
+heiltä
+heille
+
+# this
+tämä
+tämän
+tätä
+tässä
+tästä
+tähän
+tällä
+tältä
+tälle
+tänä
+täksi
+
+# that
+tuo
+tuon
+tuota
+tuossa
+tuosta
+tuohon
+tuolla
+tuolta
+tuolle
+tuona
+tuoksi
+
+# it
+se
+sen
+sitä
+siinä
+siitä
+siihen
+sillä
+siltä
+sille
+sinä
+siksi
+
+# these
+nämä
+näiden
+näitä
+näissä
+näistä
+näihin
+näillä
+näiltä
+näille
+näinä
+näiksi
+
+# those
+nuo
+noiden
+noita
+noissa
+noista
+noihin
+noilla
+noilta
+noille
+noina
+noiksi
+
+# they
+ne
+niiden
+niitä
+niissä
+niistä
+niihin
+niillä
+niiltä
+niille
+niinä
+niiksi
+
+# who
+kuka
+kenen
+kenet
+ketä
+kenessä
+kenestä
+keneen
+kenellä
+keneltä
+kenelle
+kenenä
+keneksi
+
+# who (pl)
+ketkä
+keiden
+ketkä
+keitä
+keissä
+keistä
+keihin
+keillä
+keiltä
+keille
+keinä
+keiksi
+
+# which what
+mikä
+minkä
+mitä
+missä
+mistä
+mihin
+millä
+miltä
+mille
+minä
+miksi
+
+# which what (pl)
+mitkä
+
+# who which
+joka
+jonka
+jota
+jossa
+josta
+johon
+jolla
+jolta
+jolle
+jona
+joksi
+
+# who which (pl)
+jotka
+joiden
+joita
+joissa
+joista
+joihin
+joilla
+joilta
+joille
+joina
+joiksi
+
+# conjunctions
+
+# that
+että
+# and
+ja
+# if
+jos
+# because
+koska
+# than
+kuin
+# but
+mutta
+# so
+niin
+# and
+sekä
+# for
+sillä
+# or
+tai
+# but
+vaan
+# or
+vai
+# although
+vaikka
 
 
-| prepositions
+# prepositions
 
-kanssa  | with
-mukaan  | according to
-noin    | about
-poikki  | across
-yli     | over, across
+# with
+kanssa
+# according to
+mukaan
+# about
+noin
+# across
+poikki
+# over, across
+yli
 
-| other
+# other
 
-kun    | when
-niin   | so
-nyt    | now
-itse   | self
+# when
+kun
+# so
+niin
+# now
+nyt
+# self
+itse
 EOF
 
 %post
