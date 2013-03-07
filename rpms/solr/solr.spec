@@ -2,7 +2,7 @@
 Summary: Solr binary package
 Name: apache-solr
 Version: 3.5.0
-Release: 1%{?dist}
+Release: 3%{?dist}
 Group: Applications/File
 License: Apache License 2.0
 Source0: apache-solr-3.5.0.tgz
