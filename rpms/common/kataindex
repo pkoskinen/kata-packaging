@@ -11,7 +11,7 @@ trap "rm -f ${LOCKFILE}; exit" INT TERM EXIT
 echo $$ > ${LOCKFILE}
 
 # do stuff
-/home/ckan/pyenv/bin/paster --plugin=ckan search-index rebuild -o --config=/etc/kata.ini > /dev/null 2>&1
+/home/ckan/pyenv/bin/paster --plugin=ckan search-index rebuild -o --config=/etc/kata.ini
 
 rm -f ${LOCKFILE}
 EOF
