@@ -43,5 +43,8 @@ service tomcat6 start
 # only apache account has access to the DB (besides postgres admin), allow it
 # to run setup scripts and cron jobs
 chsh -s /bin/bash apache
+# the following mkdir will fail in prod.rpm because the directory already 
+# exists when this script is executed
+# no need to add any logic, the failure does not harm
 mkdir /home/ckan
 chown apache:apache /home/ckan
