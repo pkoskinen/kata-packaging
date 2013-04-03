@@ -1,0 +1,97 @@
+Release notes for rpms-728179.tar  (2013-03-20)
+
+
+1. Major changes
+
+Linux user ckan has been removed. All KATA processes run as user apache 
+starting from this release.
+
+Directory /home/ckan continues to exist as before. The directory and
+its contents is owned by user apache.
+
+Postgres user ckanuser is being renamed to new postgres user
+apache. Access to postgres using password authentication has been
+disabled. Linux user apache has access as postgres user apache using
+"ident" method over Unix socket. TCP/IP access to the database has
+been removed. Database name ckandb remains unchanged.
+
+
+2. Installation
+
+No special instructions. Instructions in INSTALL apply.
+
+
+3. Upgrade
+
+Basic upgrade procedure follows the instructions in UPGRADE.  The
+following additional one time actions need to be carried when
+upgrading from an older release to this or a newer release. Most of the
+steps are carried out after unistalling the old rpms and before installing
+the new rpms. It is strongly encouraged to read and understand both the
+UPGRADE instructions and these release NOTES before starting the upgrade.
+ 
+
+a.) A new version of the apache-solr has been released (3.5.0-3
+instead of earlier 3.5.0-1). The old version needs to uninstalled
+after uninstalling mcfg as documented. Old solr index data needs to be
+removed using command
+
+rm -rf /opt/data/solr
+
+(The new package contains a corrected stopword list, so the resulting index will be different from the previous one.)
+ 
+b.) All data under /opt/data/ckan is now owned by user apache
+
+chown -R apache:apache /opt/data/ckan/
+
+c.) Postgres configuration needs to be updated manually
+
+diff -U3 /opt/data/pgsql/data/pg_hba.conf.130320 /opt/data/pgsql/data/pg_hba.conf
+--- /opt/data/pgsql/data/pg_hba.conf.130320     2013-02-13 22:44:59.206887509 +0200
++++ /opt/data/pgsql/data/pg_hba.conf    2013-03-20 09:17:29.177900506 +0200
+@@ -68,10 +68,4 @@
+ 
+ # "local" is for Unix domain socket connections only
+ local   all         postgres                          ident
+-local   all         all                               md5
+-# IPv4 local connections:
+-host    all         postgres    127.0.0.1/32          ident
+-host    all         all         127.0.0.1/32          md5
+-# IPv6 local connections:
+-host    all         postgres    ::1/128               ident
+-host    all         all         ::1/128               md5
++local   ckandb      apache                            ident
+
+
+diff -U3 /opt/data/pgsql/data/postgresql.conf.130320 /opt/data/pgsql/data/postgresql.conf
+--- /opt/data/pgsql/data/postgresql.conf.130320 2013-02-13 22:44:59.264887054 +0200
++++ /opt/data/pgsql/data/postgresql.conf        2013-03-20 09:41:08.012887130 +0200
+@@ -56,7 +56,7 @@
+ 
+ # - Connection Settings -
+ 
+-#listen_addresses = 'localhost'                # what IP address(es) to listen on;
++listen_addresses = ''          # what IP address(es) to listen on;
+                                        # comma-separated list of addresses;
+                                        # defaults to 'localhost', '*' = all
+                                        # (change requires restart)
+
+
+Make sure the configuration files are correctly protected:
+
+chown postgres:postgres pg_hba.conf
+chmod og= pg_hba.conf
+chown postgres:postgres postgresql.conf
+chmod og= postgresql.conf
+
+d.) Database user needs to be renamed, e.g. in psql interactive session 
+
+ALTER USER ckanuser RENAME TO apache;
+
+e.) after installing mcfg as documented in UPGRADE, make sure that
+also all *NEW* parameters in /root/kata-master.ini are
+defined. Undefined (i.e. missing) parameters will lead to failed
+installation. An updated example containing all parameters is found in
+/usr/share/mcfg/examples/kata-master.ini
+
+f.) install kata-prod as documented in UPGRADE.
