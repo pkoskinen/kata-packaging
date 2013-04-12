@@ -46,7 +46,7 @@ else
     age=None
   fi
   mv "${infofile}.new" "$infofile"
-  if [[ age == None ]]
+  if [[ $age == None ]]
   then
     echo "No previous version info found" >>"$infofile"
   else
