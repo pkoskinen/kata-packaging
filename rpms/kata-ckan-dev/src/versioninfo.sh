@@ -1,8 +1,8 @@
-#! /bin/sh
+#! /bin/bash
 #set -x
 #set -v
 
-tmpfile=/tmp/$(basename $0)-$(date "+%s")-$RANDOM
+now=$(date '+%s')
 infofile=version.info
 
 function git_available {
@@ -29,13 +29,29 @@ function git_available {
   return $retval
 }
 
-if git_available >$tmpfile
+if git_available >"${infofile}.new"
 then
-  echo '$ git rev-parse HEAD'
-  git rev-parse HEAD 
-  echo '$ git status'
-  git status
+  rm "${infofile}.new"
+  echo '$ git rev-parse HEAD' >$infofile
+  git rev-parse HEAD >>$infofile
+  echo '$ git status' >>$infofile
+  git status >>$infofile
 else
-  
-
-   
+  if [[ -e "$infofile" ]]
+  then
+    fileage=$(stat -c '%Y' "$infofile")
+    age=$(($now - $fileage))
+    mv "$infofile" "${infofile}.old" 
+  else
+    age=None
+  fi
+  mv "${infofile}.new" "$infofile"
+  if [[ age == None ]]
+  then
+    echo "No previous version info found" >>"$infofile"
+  else
+    echo "Previous version info ($age secounds ago):" >>"$infofile"
+    cat "${infofile}.old" >>"$infofile"
+    rm "${infofile}.old"
+  fi
+fi
