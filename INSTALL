@@ -35,7 +35,7 @@ step described in this document.
 II. Installation steps
 
 1. Enable EPEL & Shibboleth repos
-   1.a. "sudo yum install http://www.nic.funet.fi/pub/mirrors/fedora.redhat.com/pub/epel/6/i386/epel-release-6-8.noarch.rpm"
+   1.a. "sudo yum install http://ftp.df.lth.se/pub/fedora-epel/6/x86_64/epel-release-6-8.noarch.rpm
    1.b "cd /etc/yum.repos.d"
    1.c "sudo curl -O http://download.opensuse.org/repositories/security://shibboleth/CentOS_CentOS-6/security:shibboleth.repo"
 
