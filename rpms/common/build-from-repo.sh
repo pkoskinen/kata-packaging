@@ -17,10 +17,17 @@ if [ -d "${nv}" ]
 then
   rm -rf "${nv}"
 fi
+# version.info file is specific the to the package directory ($here)
+# but we call the tool in the repo root to get natural path names
 if [ -x src/versioninfo.sh ]
 then
-  pushd src >/dev/null
-  ./versioninfo.sh
+  pushd .. >/dev/null
+  if [ -e ~1/src/version.info ]
+  then
+    mv ~1/src/version.info .
+  fi
+  ~1/src/versioninfo.sh
+  mv version.info ~1/src
   popd >/dev/null
 fi
 cp -a src "${nv}"
