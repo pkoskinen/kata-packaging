@@ -17,6 +17,12 @@ if [ -d "${nv}" ]
 then
   rm -rf "${nv}"
 fi
+if [ -x src/versioninfo.sh ]
+then
+  pushd src >/dev/null
+  ./versioninfo
+  pod >/dev/null
+fi
 cp -a src "${nv}"
 tar cjhf "${nv}.tgz" "${nv}/"
 rm -rf "${nv}"

@@ -51,7 +51,6 @@ a kata-ckan-prod.rpm package to capture the result of this installation.
 %setup
 
 %build
-./versioninfo.sh
 # keep patches ordered alphabetically
 diff -u patches/orig/attribute-map.xml patches/kata/attribute-map.xml >attribute-map.xml.patch || true
 diff -u patches/orig/attribute-policy.xml patches/kata/attribute-policy.xml >attribute-policy.xml.patch || true
