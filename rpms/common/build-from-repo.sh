@@ -20,8 +20,8 @@ fi
 if [ -x src/versioninfo.sh ]
 then
   pushd src >/dev/null
-  ./versioninfo
-  pod >/dev/null
+  ./versioninfo.sh
+  popd >/dev/null
 fi
 cp -a src "${nv}"
 tar cjhf "${nv}.tgz" "${nv}/"
