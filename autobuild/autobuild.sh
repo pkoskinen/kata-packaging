@@ -58,10 +58,11 @@ case $phase in
   1)
     abuildhost=$abuildhostdev
     abuildport=$abuildportdev
-    # --exclude-vcs needs to be removed when we get the perfect
-    # build script that records the git version the package
-    # was built from. Or we put that stuff into autobuild,
-    # well, we'll see...
+    rpms/kata-ckan-dev/src/versioninfo.sh
+    mv version.info rpms/kata-ckan-dev/src
+    # --exclude-vcs would need to be removed to get perfect
+    # versioninfo. However, for our purposes its good enough
+    # to use the version info, we've just copied over
     tar cf abuild.tar --exclude=rpms-\*.tar --exclude-vcs .
     scp -i $abuildkey -P $abuildport abuild.tar ${abuilduser}@${abuildhost}:
     rexec tar xf abuild.tar
