@@ -166,6 +166,7 @@ rm -rf $RPM_BUILD_ROOT
 %{katadatadir}/harvester.conf
 /etc/httpd/conf.d/kata.conf
 %{katadatadir}/pip.freeze.lastknown
+%{katadatadir}/kata-packaging.versioninfo
 /etc/sysconfig/pgsql/postgresql
 
 %post
