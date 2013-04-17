@@ -41,6 +41,7 @@ BuildRequires: kata-ckan-dev
 
 %define scriptdir %{_datadir}/%{name}/setup-scripts
 %define patchdir %{_datadir}/%{name}/setup-patches
+%define katadatadir %{_datadir}/%{name}/setup-data
 %define katadocdir %{_datadir}/doc/%{name}
 
 %description
@@ -52,14 +53,16 @@ This package is for the production server.
 
 
 %build
+echo "TBD: diffs between dev and current source" >sourcediffs.txt
+# keep patches ordered alphabetically
 diff -u patches/orig/attribute-map.xml patches/kata/attribute-map.xml >attribute-map.xml.patch || true
 diff -u patches/orig/attribute-policy.xml patches/kata/attribute-policy.xml >attribute-policy.xml.patch || true
 diff -u patches/orig/httpd.conf patches/kata/httpd.conf >httpd.conf.patch || true
-diff -u patches/orig/ssl.conf patches/kata/ssl.conf >ssl.conf.patch || true
 diff -u patches/orig/pg_hba.conf patches/kata/pg_hba.conf >pg_hba.conf.patch || true
 diff -u patches/orig/postgresql.conf patches/kata/postgresql.conf >postgresql.conf.patch || true
 diff -u patches/orig/shib.conf patches/kata/shib.conf >shib.conf.patch || true
 diff -u patches/orig/shibboleth2.xml patches/kata/shibboleth2.xml >shibboleth2.xml.patch || true
+diff -u patches/orig/ssl.conf patches/kata/ssl.conf >ssl.conf.patch || true
 diff -u patches/orig/tomcat6.conf patches/kata/tomcat6.conf >tomcat6.conf.patch || true
 
 
@@ -90,6 +93,7 @@ cp $RPM_BUILD_ROOT/home/ckan/pyenv/lib/python2.6/site-packages/Orange/orange.so 
 
 install -d $RPM_BUILD_ROOT/%{scriptdir}
 install -d $RPM_BUILD_ROOT/%{patchdir}
+install -d $RPM_BUILD_ROOT/%{katadatadir}
 install -d $RPM_BUILD_ROOT/%{katadocdir}
 # following directories owned by other packages, but we need them in the
 # build root
@@ -123,17 +127,20 @@ install shibboleth2.xml.patch $RPM_BUILD_ROOT/%{patchdir}/
 install ssl.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install tomcat6.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 
-# misc data/conf files (keep them alphabetically ordered by filename)
+# misc data/conf files (keep them alphabetically ordered by source filename)
 install kataemail $RPM_BUILD_ROOT/etc/cron.daily/
 install kataharvesterjobs $RPM_BUILD_ROOT/etc/cron.daily/
 install kataindex $RPM_BUILD_ROOT/etc/cron.hourly/
 install katatracking $RPM_BUILD_ROOT/etc/cron.daily/
+install /usr/share/doc/kata-ckan-dev/setup-data/kataversion.txt $RPM_BUILD_ROOT/%{katadatadir}/katadevversion.txt
 install harvester.conf $RPM_BUILD_ROOT/%{scriptdir}/
 install kata.conf $RPM_BUILD_ROOT/etc/httpd/conf.d/
 install postgresql $RPM_BUILD_ROOT/etc/sysconfig/pgsql/
+install sourcediffs.txt
 
-# documentation (version info)
-install /usr/share/kata-ckan-dev/setup-data/pip.freeze.current $RPM_BUILD_ROOT/%{katadocdir}/
+-- HERE -- can be produced during build, needs only to appended to existing version during %post
+
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT

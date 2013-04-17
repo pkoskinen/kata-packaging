@@ -19,4 +19,5 @@ touch /tmp/kata-SKIP44   # 44installckanextensions.sh
 touch /tmp/kata-SKIP48   # 48initextensionsdb.sh
 touch /tmp/kata-SKIP61   # 61setupsources.sh
 touch /tmp/kata-SKIP70   # 70checkpythonpackages.sh
-touch /tmp/kata-SKIP71   # 71storepythonpackages.sh
+touch /tmp/kata-SKIP71   # 71storedevversioninfo.sh
+touch /tmp/kata-SKIP72   # 72storeprodversioninfo.sh

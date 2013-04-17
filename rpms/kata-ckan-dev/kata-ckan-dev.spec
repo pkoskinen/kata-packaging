@@ -39,6 +39,7 @@ Conflicts: kata-ckan-prod
 %define scriptdir %{_datadir}/%{name}/setup-scripts
 %define patchdir %{_datadir}/%{name}/setup-patches
 %define katadatadir %{_datadir}/%{name}/setup-data
+%define katadocdir %{_datadir}/doc/%{name}
 
 %description
 Installs a CKAN environment using pip.
@@ -68,6 +69,7 @@ diff -u patches/orig/who.ini patches/kata/who.ini >who.ini.patch || true
 install -d $RPM_BUILD_ROOT/%{scriptdir}
 install -d $RPM_BUILD_ROOT/%{patchdir}
 install -d $RPM_BUILD_ROOT/%{katadatadir}
+install -d $RPM_BUILD_ROOT/%{katadocdir}
 # following directories owned by other packages, but we need them in the
 # build root
 install -d $RPM_BUILD_ROOT/etc/cron.daily
@@ -214,7 +216,7 @@ service crond start
 su -c "%{scriptdir}/70checkpythonpackages.sh /home/ckan %{katadatadir}/pip.freeze.lastknown" apache
 # well, actually it was last but one, but we still need to do this as root
 # afterwards
-%{scriptdir}/71storepythonpackages.sh %{katadatadir}
+%{scriptdir}/71storeversioninfo.sh %{katadatadir} %{katadocdir}
 
 %preun
 
