@@ -17,6 +17,17 @@ if [ -d "${nv}" ]
 then
   rm -rf "${nv}"
 fi
+if [ "$name" = kata-ckan-dev ]
+then
+   pushd .. >/dev/null
+   ~1/src/devproddiff.sh dev
+   popd >/dev/null
+elif [ "$name" = kata-ckan-prod ]
+then
+   pushd .. >/dev/null
+   ~1/src/devproddiff.sh prod
+   popd >/dev/null
+fi
 # version.info file is specific the to the package directory ($here)
 # but we call the tool in the repo root to get natural path names
 if [ -x src/versioninfo.sh ]
