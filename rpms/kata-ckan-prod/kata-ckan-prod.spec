@@ -53,7 +53,10 @@ This package is for the production server.
 
 
 %build
-echo "TBD: diffs between dev and current source" >sourcediffs.txt
+# just assume that sourcediffs.txt is here. build-from-repo generates it,
+# with some other build system build will fail. Because we currently
+# only use build-from-repo we prefer to see the failure, should something
+# go wrong
 ./prod-versioninfo.sh
 # keep patches ordered alphabetically
 diff -u patches/orig/attribute-map.xml patches/kata/attribute-map.xml >attribute-map.xml.patch || true
