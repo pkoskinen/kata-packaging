@@ -93,7 +93,7 @@ install 44installckanextensions.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 48initextensionsdb.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 61setupsources.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 70checkpythonpackages.sh $RPM_BUILD_ROOT/%{scriptdir}/
-install 71storepythonpackages.sh $RPM_BUILD_ROOT/%{scriptdir}/
+install 71storedevversioninfo.sh $RPM_BUILD_ROOT/%{scriptdir}/
 
 # misc scripts (keep them alphabetically ordered by filename)
 install runharvester.sh $RPM_BUILD_ROOT/%{katadatadir}/
@@ -145,7 +145,7 @@ rm -rf $RPM_BUILD_ROOT
 %{scriptdir}/48initextensionsdb.sh
 %{scriptdir}/61setupsources.sh
 %{scriptdir}/70checkpythonpackages.sh
-%{scriptdir}/71storepythonpackages.sh
+%{scriptdir}/71storedevversioninfo.sh
 
 # sic! following script in datadir
 %{katadatadir}/runharvester.sh
@@ -169,6 +169,10 @@ rm -rf $RPM_BUILD_ROOT
 %{katadatadir}/pip.freeze.lastknown
 %{katadatadir}/kata-packaging.versioninfo
 /etc/sysconfig/pgsql/postgresql
+
+# need the directory, otherwise %post cannot write to it
+%{katadocdir}
+
 
 %post
 %{scriptdir}/04configuredependencies.sh %{patchdir}
@@ -216,7 +220,7 @@ service crond start
 su -c "%{scriptdir}/70checkpythonpackages.sh /home/ckan %{katadatadir}/pip.freeze.lastknown" apache
 # well, actually it was last but one, but we still need to do this as root
 # afterwards
-%{scriptdir}/71storeversioninfo.sh %{katadatadir} %{katadocdir}
+%{scriptdir}/71storedevversioninfo.sh %{katadatadir} %{katadocdir}
 
 %preun
 

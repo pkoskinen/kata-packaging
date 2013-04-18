@@ -8,8 +8,16 @@ fi
 datadir=$1
 docdir=$2
 date="$(date)"
-echo "--- $date ---: Part I" >>$docdir/kataversion.txt
-cat ${datadir}/sourcediffs.txt >>$docdir/kataversion.txt
-echo "--- $date ---: Part II" >>$docdir/kataversion.txt
-cat ${datadir}/katadevversion.txt >>$docdir/kataversion.txt
-echo "--- $date ---: End of Part II" >>$docdir/kataversion.txt
+# Always append to the file created by previous versions to maintain an
+# installation history
+# because rpm does not know about this file it will not be removed
+# during uninstallation
+if [ \! -e $docdir/kataversion.txt ]
+then
+  echo '*** NEVER DELETE THIS FILE ***' >$docdir/kataversion.txt
+  echo >>$docdir/kataversion.txt
+fi
+echo "--- $date ---: Start of installation" >>$docdir/kataversion.txt
+cat ${datadir}/kata-prod.versioninfo >>$docdir/kataversion.txt
+echo "--- $date ---: End of installation" >>$docdir/kataversion.txt
+echo '*** NEVER DELETE THIS FILE ***' >>$docdir/kataversion.txt

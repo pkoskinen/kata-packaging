@@ -54,6 +54,7 @@ This package is for the production server.
 
 %build
 echo "TBD: diffs between dev and current source" >sourcediffs.txt
+./prod-versioninfo.sh
 # keep patches ordered alphabetically
 diff -u patches/orig/attribute-map.xml patches/kata/attribute-map.xml >attribute-map.xml.patch || true
 diff -u patches/orig/attribute-policy.xml patches/kata/attribute-policy.xml >attribute-policy.xml.patch || true
@@ -113,6 +114,7 @@ install 36initckandb.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 40setupapache.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 48initextensionsdb.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 61setupsources.sh $RPM_BUILD_ROOT/%{scriptdir}/
+install 72storeprodversioninfo.sh $RPM_BUILD_ROOT/%{scriptdir}/
 install 80backuphome.sh $RPM_BUILD_ROOT/%{scriptdir}/
 # misc scripts (keep them alphabetically ordered by filename)
 install runharvester.sh $RPM_BUILD_ROOT/%{scriptdir}/
@@ -128,18 +130,14 @@ install ssl.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install tomcat6.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 
 # misc data/conf files (keep them alphabetically ordered by source filename)
+install kata-prod.versioninfo $RPM_BUILD_ROOT/%{katadatadir}/
 install kataemail $RPM_BUILD_ROOT/etc/cron.daily/
 install kataharvesterjobs $RPM_BUILD_ROOT/etc/cron.daily/
 install kataindex $RPM_BUILD_ROOT/etc/cron.hourly/
 install katatracking $RPM_BUILD_ROOT/etc/cron.daily/
-install /usr/share/doc/kata-ckan-dev/setup-data/kataversion.txt $RPM_BUILD_ROOT/%{katadatadir}/katadevversion.txt
 install harvester.conf $RPM_BUILD_ROOT/%{scriptdir}/
 install kata.conf $RPM_BUILD_ROOT/etc/httpd/conf.d/
 install postgresql $RPM_BUILD_ROOT/etc/sysconfig/pgsql/
-install sourcediffs.txt
-
--- HERE -- can be produced during build, needs only to appended to existing version during %post
-
 
 
 %clean
@@ -159,6 +157,7 @@ rm -rf $RPM_BUILD_ROOT
 %{scriptdir}/40setupapache.sh
 %{scriptdir}/48initextensionsdb.sh
 %{scriptdir}/61setupsources.sh
+%{scriptdir}/72storeprodversioninfo.sh
 %{scriptdir}/80backuphome.sh
 %{scriptdir}/runharvester.sh
 %{patchdir}/httpd.conf.patch
@@ -179,8 +178,11 @@ rm -rf $RPM_BUILD_ROOT
 %{patchdir}/ssl.conf.patch
 %{patchdir}/tomcat6.conf.patch
 
-# documentation (version info)
-%{katadocdir}/pip.freeze.current
+# data
+%{katadatadir}/kata-prod.versioninfo
+
+# need the directory, otherwise %post cannot write to it
+%{katadocdir}
 
 %pre
 
@@ -201,6 +203,7 @@ cat /usr/share/kata-ckan-prod/setup-scripts/harvester.conf >> /etc/supervisord.c
 sed -i 's/;directory/directory/' /etc/supervisord.conf
 chkconfig supervisord on
 %{scriptdir}/61setupsources.sh /home/ckan apache
+%{scriptdir}/72storeprodversioninfo.sh %{katadatadir} %{katadocdir}
 service atd restart
 at -f %{scriptdir}/runharvester.sh 'now + 3 minute'
 
