@@ -118,7 +118,7 @@ install kataindex $RPM_BUILD_ROOT/etc/cron.hourly/
 install katatracking $RPM_BUILD_ROOT/etc/cron.daily/
 install harvester.conf $RPM_BUILD_ROOT/%{katadatadir}/
 install kata.conf $RPM_BUILD_ROOT/etc/httpd/conf.d/
-install log/pip.freeze.lastknown $RPM_BUILD_ROOT/%{katadatadir}/
+install data/pip.freeze.lastknown $RPM_BUILD_ROOT/%{katadatadir}/
 install postgresql $RPM_BUILD_ROOT/etc/sysconfig/pgsql/
 install version.info $RPM_BUILD_ROOT/%{katadatadir}/kata-packaging.versioninfo
 
