@@ -2,8 +2,8 @@
  Package                Arch   Version                Repository           Size
 ================================================================================
 Installing:
- kata-ckan-dev          x86_64 728017-1.el6           /kata-ckan-dev-728017-1.el6.x86_64
-                                                                           41 k
+ kata-ckan-dev          x86_64 772713-1.el6           /kata-ckan-dev-772713-1.el6.x86_64
+                                                                           43 k
 Installing for dependencies:
  SDL                    x86_64 1.2.14-3.el6           base                193 k
  apr                    x86_64 1.3.9-5.el6_2          base                123 k
@@ -15,64 +15,64 @@ Installing for dependencies:
  catdoc                 x86_64 0.94.2-6.el6           epel                 99 k
  cloog-ppl              x86_64 0.15.7-1.2.el6         base                 93 k
  cpp                    x86_64 4.4.7-3.el6            base                3.7 M
- erlang                 x86_64 R14B-04.1.el6          epel                 26 k
- erlang-appmon          x86_64 R14B-04.1.el6          epel                144 k
- erlang-asn1            x86_64 R14B-04.1.el6          epel                993 k
- erlang-common_test     x86_64 R14B-04.1.el6          epel                508 k
- erlang-compiler        x86_64 R14B-04.1.el6          epel                986 k
- erlang-cosEvent        x86_64 R14B-04.1.el6          epel                148 k
- erlang-cosEventDomain  x86_64 R14B-04.1.el6          epel                113 k
- erlang-cosFileTransfer x86_64 R14B-04.1.el6          epel                167 k
- erlang-cosNotification x86_64 R14B-04.1.el6          epel                718 k
- erlang-cosProperty     x86_64 R14B-04.1.el6          epel                160 k
- erlang-cosTime         x86_64 R14B-04.1.el6          epel                106 k
- erlang-cosTransactions x86_64 R14B-04.1.el6          epel                164 k
- erlang-crypto          x86_64 R14B-04.1.el6          epel                 50 k
- erlang-debugger        x86_64 R14B-04.1.el6          epel                439 k
- erlang-dialyzer        x86_64 R14B-04.1.el6          epel                567 k
- erlang-diameter        x86_64 R14B-04.1.el6          epel                449 k
- erlang-docbuilder      x86_64 R14B-04.1.el6          epel                191 k
- erlang-edoc            x86_64 R14B-04.1.el6          epel                301 k
- erlang-erl_docgen      x86_64 R14B-04.1.el6          epel                109 k
- erlang-erl_interface   x86_64 R14B-04.1.el6          epel                149 k
- erlang-erts            x86_64 R14B-04.1.el6          epel                2.0 M
- erlang-et              x86_64 R14B-04.1.el6          epel                197 k
- erlang-eunit           x86_64 R14B-04.1.el6          epel                139 k
- erlang-examples        x86_64 R14B-04.1.el6          epel                832 k
- erlang-gs              x86_64 R14B-04.1.el6          epel                608 k
- erlang-hipe            x86_64 R14B-04.1.el6          epel                1.0 M
- erlang-ic              x86_64 R14B-04.1.el6          epel                845 k
- erlang-inets           x86_64 R14B-04.1.el6          epel                749 k
- erlang-inviso          x86_64 R14B-04.1.el6          epel                153 k
- erlang-jinterface      x86_64 R14B-04.1.el6          epel                 94 k
- erlang-kernel          x86_64 R14B-04.1.el6          epel                1.0 M
- erlang-megaco          x86_64 R14B-04.1.el6          epel                7.8 M
- erlang-mnesia          x86_64 R14B-04.1.el6          epel                662 k
- erlang-observer        x86_64 R14B-04.1.el6          epel                205 k
- erlang-odbc            x86_64 R14B-04.1.el6          epel                 59 k
- erlang-orber           x86_64 R14B-04.1.el6          epel                908 k
- erlang-os_mon          x86_64 R14B-04.1.el6          epel                104 k
- erlang-otp_mibs        x86_64 R14B-04.1.el6          epel                 27 k
- erlang-parsetools      x86_64 R14B-04.1.el6          epel                164 k
- erlang-percept         x86_64 R14B-04.1.el6          epel                140 k
- erlang-pman            x86_64 R14B-04.1.el6          epel                104 k
- erlang-public_key      x86_64 R14B-04.1.el6          epel                402 k
- erlang-reltool         x86_64 R14B-04.1.el6          epel                296 k
- erlang-runtime_tools   x86_64 R14B-04.1.el6          epel                209 k
- erlang-sasl            x86_64 R14B-04.1.el6          epel                263 k
- erlang-snmp            x86_64 R14B-04.1.el6          epel                1.5 M
- erlang-ssh             x86_64 R14B-04.1.el6          epel                361 k
- erlang-ssl             x86_64 R14B-04.1.el6          epel                378 k
- erlang-stdlib          x86_64 R14B-04.1.el6          epel                2.1 M
- erlang-syntax_tools    x86_64 R14B-04.1.el6          epel                317 k
- erlang-test_server     x86_64 R14B-04.1.el6          epel                272 k
- erlang-toolbar         x86_64 R14B-04.1.el6          epel                 49 k
- erlang-tools           x86_64 R14B-04.1.el6          epel                535 k
- erlang-tv              x86_64 R14B-04.1.el6          epel                377 k
- erlang-typer           x86_64 R14B-04.1.el6          epel                 58 k
- erlang-webtool         x86_64 R14B-04.1.el6          epel                 45 k
- erlang-wx              x86_64 R14B-04.1.el6          epel                2.4 M
- erlang-xmerl           x86_64 R14B-04.1.el6          epel                939 k
+ erlang                 x86_64 R14B-04.2.el6          epel                 26 k
+ erlang-appmon          x86_64 R14B-04.2.el6          epel                144 k
+ erlang-asn1            x86_64 R14B-04.2.el6          epel                993 k
+ erlang-common_test     x86_64 R14B-04.2.el6          epel                508 k
+ erlang-compiler        x86_64 R14B-04.2.el6          epel                987 k
+ erlang-cosEvent        x86_64 R14B-04.2.el6          epel                148 k
+ erlang-cosEventDomain  x86_64 R14B-04.2.el6          epel                113 k
+ erlang-cosFileTransfer x86_64 R14B-04.2.el6          epel                167 k
+ erlang-cosNotification x86_64 R14B-04.2.el6          epel                718 k
+ erlang-cosProperty     x86_64 R14B-04.2.el6          epel                161 k
+ erlang-cosTime         x86_64 R14B-04.2.el6          epel                106 k
+ erlang-cosTransactions x86_64 R14B-04.2.el6          epel                164 k
+ erlang-crypto          x86_64 R14B-04.2.el6          epel                 50 k
+ erlang-debugger        x86_64 R14B-04.2.el6          epel                440 k
+ erlang-dialyzer        x86_64 R14B-04.2.el6          epel                567 k
+ erlang-diameter        x86_64 R14B-04.2.el6          epel                449 k
+ erlang-docbuilder      x86_64 R14B-04.2.el6          epel                192 k
+ erlang-edoc            x86_64 R14B-04.2.el6          epel                301 k
+ erlang-erl_docgen      x86_64 R14B-04.2.el6          epel                109 k
+ erlang-erl_interface   x86_64 R14B-04.2.el6          epel                149 k
+ erlang-erts            x86_64 R14B-04.2.el6          epel                2.0 M
+ erlang-et              x86_64 R14B-04.2.el6          epel                197 k
+ erlang-eunit           x86_64 R14B-04.2.el6          epel                139 k
+ erlang-examples        x86_64 R14B-04.2.el6          epel                832 k
+ erlang-gs              x86_64 R14B-04.2.el6          epel                608 k
+ erlang-hipe            x86_64 R14B-04.2.el6          epel                1.0 M
+ erlang-ic              x86_64 R14B-04.2.el6          epel                845 k
+ erlang-inets           x86_64 R14B-04.2.el6          epel                749 k
+ erlang-inviso          x86_64 R14B-04.2.el6          epel                154 k
+ erlang-jinterface      x86_64 R14B-04.2.el6          epel                 95 k
+ erlang-kernel          x86_64 R14B-04.2.el6          epel                1.0 M
+ erlang-megaco          x86_64 R14B-04.2.el6          epel                7.8 M
+ erlang-mnesia          x86_64 R14B-04.2.el6          epel                662 k
+ erlang-observer        x86_64 R14B-04.2.el6          epel                205 k
+ erlang-odbc            x86_64 R14B-04.2.el6          epel                 59 k
+ erlang-orber           x86_64 R14B-04.2.el6          epel                909 k
+ erlang-os_mon          x86_64 R14B-04.2.el6          epel                104 k
+ erlang-otp_mibs        x86_64 R14B-04.2.el6          epel                 28 k
+ erlang-parsetools      x86_64 R14B-04.2.el6          epel                164 k
+ erlang-percept         x86_64 R14B-04.2.el6          epel                140 k
+ erlang-pman            x86_64 R14B-04.2.el6          epel                105 k
+ erlang-public_key      x86_64 R14B-04.2.el6          epel                402 k
+ erlang-reltool         x86_64 R14B-04.2.el6          epel                296 k
+ erlang-runtime_tools   x86_64 R14B-04.2.el6          epel                210 k
+ erlang-sasl            x86_64 R14B-04.2.el6          epel                263 k
+ erlang-snmp            x86_64 R14B-04.2.el6          epel                1.5 M
+ erlang-ssh             x86_64 R14B-04.2.el6          epel                361 k
+ erlang-ssl             x86_64 R14B-04.2.el6          epel                378 k
+ erlang-stdlib          x86_64 R14B-04.2.el6          epel                2.1 M
+ erlang-syntax_tools    x86_64 R14B-04.2.el6          epel                317 k
+ erlang-test_server     x86_64 R14B-04.2.el6          epel                272 k
+ erlang-toolbar         x86_64 R14B-04.2.el6          epel                 49 k
+ erlang-tools           x86_64 R14B-04.2.el6          epel                535 k
+ erlang-tv              x86_64 R14B-04.2.el6          epel                377 k
+ erlang-typer           x86_64 R14B-04.2.el6          epel                 58 k
+ erlang-webtool         x86_64 R14B-04.2.el6          epel                 45 k
+ erlang-wx              x86_64 R14B-04.2.el6          epel                2.4 M
+ erlang-xmerl           x86_64 R14B-04.2.el6          epel                939 k
  gc                     x86_64 7.1-10.el6             base                146 k
  gcc                    x86_64 4.4.7-3.el6            base                 10 M
  gcc-c++                x86_64 4.4.7-3.el6            base                4.7 M
@@ -139,25 +139,14 @@ Installing for dependencies:
  wxGTK-gl               x86_64 2.8.12-1.el6.centos    extras               31 k
  xmltooling-schemas     x86_64 1.5.2-1.1              security_shibboleth  12 k
  zlib-devel             x86_64 1.2.3-29.el6           base                 44 k
-Updating for dependencies:
- glibc                  x86_64 2.12-1.107.el6         base                3.8 M
- glibc-common           x86_64 2.12-1.107.el6         base                 14 M
- libgcc                 x86_64 4.4.7-3.el6            base                100 k
- libsemanage            x86_64 2.0.43-4.2.el6         base                104 k
- libstdc++              x86_64 4.4.7-3.el6            base                293 k
- libxml2                x86_64 2.7.6-12.el6_4.1       updates             799 k
- policycoreutils        x86_64 2.0.83-19.30.el6       base                646 k
- python                 x86_64 2.6.6-36.el6           base                4.8 M
- python-libs            x86_64 2.6.6-36.el6           base                595 k
- zlib                   x86_64 1.2.3-29.el6           base                 73 k
 
 Transaction Summary
 ================================================================================
 Install     135 Package(s)
-Upgrade      10 Package(s)
 
-Total size: 132 M
-Total download size: 132 M
+Total size: 107 M
+Total download size: 107 M
+Installed size: 315 M
 
 + '[' -f /tmp/kata-SKIP04 ']'
 + patchdir=/usr/share/kata-ckan-dev/setup-patches
@@ -187,7 +176,7 @@ Shell changed.
 + curl -O https://raw.github.com/pypa/virtualenv/master/virtualenv.py
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 20  112k   20 23435    0     0  31672      0  0:00:03 --:--:--  0:00:03 51847100  112k  100  112k    0     0   130k      0 --:--:-- --:--:-- --:--:--  194k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  112k  100  112k    0     0   105k      0  0:00:01  0:00:01 --:--:--  229k
 + md5sum virtualenv.py
 3c152e15898578db937d5253d1478b39  virtualenv.py
 + cd ..
@@ -321,8 +310,6 @@ Downloading/unpacking markupsafe==0.15 (from -r pyenv/src/ckan/pip-requirements.
   Running setup.py egg_info for package markupsafe
 Downloading/unpacking babel==0.9.6 (from -r pyenv/src/ckan/pip-requirements.txt (line 17))
   Running setup.py egg_info for package babel
-    warning: no files found matching 'doc/api/*.*'
-    warning: no files found matching 'doc/*.html'
 Downloading/unpacking psycopg2==2.4.5 (from -r pyenv/src/ckan/pip-requirements.txt (line 18))
   Running setup.py egg_info for package psycopg2
     no previously-included directories found matching 'doc/src/_build'
@@ -515,8 +502,6 @@ Installing collected packages: Genshi, sqlalchemy-migrate, sqlalchemy, webhelper
     gcc -pthread -fno-strict-aliasing -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -fPIC -I/usr/include/python2.6 -c markupsafe/_speedups.c -o build/temp.linux-x86_64-2.6/markupsafe/_speedups.o
     gcc -pthread -shared build/temp.linux-x86_64-2.6/markupsafe/_speedups.o -L/usr/lib64 -lpython2.6 -o build/lib.linux-x86_64-2.6/markupsafe/_speedups.so
   Running setup.py install for babel
-    warning: no files found matching 'doc/api/*.*'
-    warning: no files found matching 'doc/*.html'
     Installing pybabel script to /home/ckan/pyenv/bin
   Running setup.py install for psycopg2
     building 'psycopg2._psycopg' extension
@@ -741,8 +726,8 @@ Starting postgresql service: [  OK  ]
 + '[' -f /tmp/kata-SKIP22 ']'
 + instloc=/home/ckan
 ++ date +%y%m%d-%H%M%S
-+ postfix=-130319-103617
-+ cp /opt/data/solr/conf/schema.xml /opt/data/solr/conf/schema.xml.bak--130319-103617
++ postfix=-130419-122833
++ cp /opt/data/solr/conf/schema.xml /opt/data/solr/conf/schema.xml.bak--130419-122833
 + cp /home/ckan/pyenv/src/ckan/ckan/config/solr/schema-2.0.xml /opt/data/solr/conf/schema.xml
 + service tomcat6 restart
 Stopping tomcat6: [  OK  ]
@@ -856,8 +841,8 @@ patching file development.ini
   ret = fn(self, con, *args, **kw)
 /home/ckan/pyenv/lib/python2.6/site-packages/sqlalchemy/engine/reflection.py:47: SAWarning: Skipped unsupported reflection of expression-based index idx_user_name_index
   ret = fn(self, con, *args, **kw)
-2013-03-19 10:37:03,566 INFO  [ckan.model] CKAN database version upgraded: 0 -> 65
-2013-03-19 10:37:03,717 INFO  [ckan.model] Database initialised
+2013-04-19 12:29:20,996 INFO  [ckan.model] CKAN database version upgraded: 0 -> 65
+2013-04-19 12:29:21,115 INFO  [ckan.model] Database initialised
 Initialising DB: SUCCESS
 + '[' -f /tmp/kata-SKIP40 ']'
 + patchdir=/usr/share/kata-ckan-dev/setup-patches
@@ -974,7 +959,9 @@ Downloading/unpacking pyoai (from ckanext-oaipmh)
 Requirement already satisfied (use --upgrade to upgrade): ckanext-harvest in /home/ckan/pyenv/src/ckanext-harvest (from ckanext-oaipmh)
 Downloading/unpacking lxml (from pyoai->ckanext-oaipmh)
   Running setup.py egg_info for package lxml
-    Building lxml version 3.1.0.
+    /usr/lib64/python2.6/distutils/dist.py:266: UserWarning: Unknown distribution option: 'bugtrack_url'
+      warnings.warn(msg)
+    Building lxml version 3.1.2.
     Building without Cython.
     Using build configuration of libxslt 1.1.26
     Building against libxml2/libxslt in the following directory: /usr/lib64
@@ -988,39 +975,40 @@ Installing collected packages: ckanext-oaipmh, pyoai, lxml
     Installed /home/ckan/pyenv/src/ckanext-oaipmh
   Running setup.py install for pyoai
   Running setup.py install for lxml
-    Building lxml version 3.1.0.
+    /usr/lib64/python2.6/distutils/dist.py:266: UserWarning: Unknown distribution option: 'bugtrack_url'
+      warnings.warn(msg)
+    Building lxml version 3.1.2.
     Building without Cython.
     Using build configuration of libxslt 1.1.26
     Building against libxml2/libxslt in the following directory: /usr/lib64
     building 'lxml.etree' extension
     gcc -pthread -fno-strict-aliasing -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -fPIC -I/usr/include/libxml2 -I/home/ckan/pyenv/build/lxml/src/lxml/includes -I/usr/include/python2.6 -c src/lxml/lxml.etree.c -o build/temp.linux-x86_64-2.6/src/lxml/lxml.etree.o
     src/lxml/lxml.etree.c: In function ‘__pyx_pf_4lxml_5etree_4XSLT_18__call__’:
-    src/lxml/lxml.etree.c:138025: warning: passing argument 1 of ‘__pyx_f_4lxml_5etree_12_XSLTContext__copy’ from incompatible pointer type
-    src/lxml/lxml.etree.c:135981: note: expected ‘struct __pyx_obj_4lxml_5etree__XSLTContext *’ but argument is of type ‘struct __pyx_obj_4lxml_5etree__BaseContext *’
+    src/lxml/lxml.etree.c:138273: warning: passing argument 1 of ‘__pyx_f_4lxml_5etree_12_XSLTContext__copy’ from incompatible pointer type
+    src/lxml/lxml.etree.c:136229: note: expected ‘struct __pyx_obj_4lxml_5etree__XSLTContext *’ but argument is of type ‘struct __pyx_obj_4lxml_5etree__BaseContext *’
     src/lxml/lxml.etree.c: In function ‘__pyx_f_4lxml_5etree__copyXSLT’:
-    src/lxml/lxml.etree.c:139419: warning: passing argument 1 of ‘__pyx_f_4lxml_5etree_12_XSLTContext__copy’ from incompatible pointer type
-    src/lxml/lxml.etree.c:135981: note: expected ‘struct __pyx_obj_4lxml_5etree__XSLTContext *’ but argument is of type ‘struct __pyx_obj_4lxml_5etree__BaseContext *’
+    src/lxml/lxml.etree.c:139667: warning: passing argument 1 of ‘__pyx_f_4lxml_5etree_12_XSLTContext__copy’ from incompatible pointer type
+    src/lxml/lxml.etree.c:136229: note: expected ‘struct __pyx_obj_4lxml_5etree__XSLTContext *’ but argument is of type ‘struct __pyx_obj_4lxml_5etree__BaseContext *’
     src/lxml/lxml.etree.c: At top level:
-    src/lxml/lxml.etree.c:12378: warning: ‘__pyx_f_4lxml_5etree_displayNode’ defined but not used
+    src/lxml/lxml.etree.c:12384: warning: ‘__pyx_f_4lxml_5etree_displayNode’ defined but not used
     src/lxml/lxml.etree.c: In function ‘__pyx_f_4lxml_5etree_11_BaseParser__parseDocFromFilelike’:
-    src/lxml/lxml.etree.c:87604: warning: ‘__pyx_r’ may be used uninitialized in this function
+    src/lxml/lxml.etree.c:87725: warning: ‘__pyx_r’ may be used uninitialized in this function
     src/lxml/lxml.etree.c: In function ‘__pyx_f_4lxml_5etree_11_BaseParser__parseDocFromFile’:
-    src/lxml/lxml.etree.c:87290: warning: ‘__pyx_r’ may be used uninitialized in this function
+    src/lxml/lxml.etree.c:87411: warning: ‘__pyx_r’ may be used uninitialized in this function
     src/lxml/lxml.etree.c: In function ‘__pyx_f_4lxml_5etree_11_BaseParser__parseDoc’:
-    src/lxml/lxml.etree.c:86980: warning: ‘__pyx_r’ may be used uninitialized in this function
+    src/lxml/lxml.etree.c:87101: warning: ‘__pyx_r’ may be used uninitialized in this function
     src/lxml/lxml.etree.c: In function ‘__pyx_f_4lxml_5etree_11_BaseParser__parseUnicodeDoc’:
-    src/lxml/lxml.etree.c:86652: warning: ‘__pyx_r’ may be used uninitialized in this function
+    src/lxml/lxml.etree.c:86773: warning: ‘__pyx_r’ may be used uninitialized in this function
     gcc -pthread -shared build/temp.linux-x86_64-2.6/src/lxml/lxml.etree.o -L/usr/lib64 -L/usr/lib64 -lxslt -lexslt -lxml2 -lz -lm -lpython2.6 -o build/lib.linux-x86_64-2.6/lxml/etree.so
     building 'lxml.objectify' extension
     gcc -pthread -fno-strict-aliasing -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -fPIC -I/usr/include/libxml2 -I/home/ckan/pyenv/build/lxml/src/lxml/includes -I/usr/include/python2.6 -c src/lxml/lxml.objectify.c -o build/temp.linux-x86_64-2.6/src/lxml/lxml.objectify.o
     gcc -pthread -shared build/temp.linux-x86_64-2.6/src/lxml/lxml.objectify.o -L/usr/lib64 -L/usr/lib64 -lxslt -lexslt -lxml2 -lz -lm -lpython2.6 -o build/lib.linux-x86_64-2.6/lxml/objectify.so
-    warning: no previously-included files found matching '*.py'
     warning: no files found matching '*.txt' under directory 'src/lxml/tests'
 Successfully installed ckanext-oaipmh pyoai lxml
 Cleaning up...
 + pip install -e bzr+lp:beautifulsoup#egg=BeautifulSoup
 failed to open trace file: [Errno 13] Permission denied: '/var/www/.bzr.log'
-[ 4668] 2013-03-19 10:41:45.875 WARNING: You have not informed bzr of your Launchpad ID, and you must do this to
+[ 4610] 2013-04-19 12:32:55.713 WARNING: You have not informed bzr of your Launchpad ID, and you must do this to
 write to Launchpad or access private data.  See "bzr help launchpad-login".
 You have not informed bzr of your Launchpad ID, and you must do this to
 write to Launchpad or access private data.  See "bzr help launchpad-login".
@@ -1109,8 +1097,8 @@ Downloading/unpacking pycountry (from ckanext-kata)
 Downloading/unpacking Orange (from ckanext-kata)
   Running setup.py egg_info for package Orange
     Downloading http://pypi.python.org/packages/source/d/distribute/distribute-0.6.26.tar.gz
-    Extracting in /tmp/tmpK2k09l
-    Now working in /tmp/tmpK2k09l/distribute-0.6.26
+    Extracting in /tmp/tmpFCpNKb
+    Now working in /tmp/tmpFCpNKb/distribute-0.6.26
     Building a Distribute egg in /home/ckan/pyenv/build/Orange
     warning: no files found matching 'Makefile' under directory 'docs'
     warning: no files found matching 'indexsidebar.html' under directory 'docs'
@@ -1127,8 +1115,8 @@ Downloading/unpacking Orange (from ckanext-kata)
 Downloading/unpacking Orange-Text (from ckanext-kata)
   Running setup.py egg_info for package Orange-Text
     Downloading http://pypi.python.org/packages/source/d/distribute/distribute-0.6.26.tar.gz
-    Extracting in /tmp/tmprhKjQg
-    Now working in /tmp/tmprhKjQg/distribute-0.6.26
+    Extracting in /tmp/tmp6pgOHH
+    Now working in /tmp/tmp6pgOHH/distribute-0.6.26
     Building a Distribute egg in /home/ckan/pyenv/build/Orange-Text
     warning: no files found matching 'Makefile' under directory 'docs'
     warning: no files found matching 'indexsidebar.html' under directory 'docs'
@@ -3247,6 +3235,9 @@ Installing collected packages: ckanext-kata, rdflib, iso8601, pycountry, Orange,
     In file included from numpy/core/src/multiarray/multiarraymodule_onefile.c:26:
     numpy/core/src/multiarray/mapping.c: In function ‘array_ass_sub’:
     numpy/core/src/multiarray/mapping.c:1294: warning: assignment from incompatible pointer type
+    In file included from numpy/core/src/multiarray/multiarraymodule_onefile.c:34:
+    numpy/core/src/multiarray/item_selection.c: In function ‘PyArray_LexSort’:
+    numpy/core/src/multiarray/item_selection.c:1324: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘npy_intp’
     In file included from numpy/core/src/multiarray/multiarraymodule_onefile.c:41:
     numpy/core/src/multiarray/nditer_constr.c: In function ‘npyiter_prepare_one_operand’:
     numpy/core/src/multiarray/nditer_constr.c:1017: warning: unused variable ‘tmp’
@@ -3268,7 +3259,7 @@ Installing collected packages: ckanext-kata, rdflib, iso8601, pycountry, Orange,
     numpy/core/src/multiarray/convert.c:474: warning: ‘PyArray_AssignOne’ defined but not used
     In file included from numpy/core/src/multiarray/multiarraymodule_onefile.c:34:
     numpy/core/src/multiarray/item_selection.c: In function ‘PyArray_Sort’:
-    numpy/core/src/multiarray/item_selection.c:957: warning: ‘orign’ may be used uninitialized in this function
+    numpy/core/src/multiarray/item_selection.c:1019: warning: ‘orign’ may be used uninitialized in this function
     gcc -pthread -shared build/temp.linux-x86_64-2.6/numpy/core/src/multiarray/multiarraymodule_onefile.o -L/usr/lib64 -Lbuild/temp.linux-x86_64-2.6 -lnpymath -lnpysort -lm -lpython2.6 -o build/lib.linux-x86_64-2.6/numpy/core/multiarray.so
     building 'numpy.core.umath' extension
     compiling C sources
@@ -3413,13 +3404,13 @@ DB tables created
 Creating user: 'harvester'
 {'about': None,
  'activity_streams_email_notifications': False,
- 'apikey': u'a4433402-37f5-4029-b204-53dc7be1c35f',
- 'created': '2013-03-19T11:11:22.822583',
+ 'apikey': u'858818d0-7a47-4e33-898c-970996868393',
+ 'created': '2013-04-19T13:02:09.687455',
  'display_name': u'harvester',
  'email': u'harvester@harvesting.none',
  'email_hash': '8597e3dc7d0c426f92d263a0aab5b782',
  'fullname': None,
- 'id': u'831692c8-86cf-4b33-b571-33b0ce6e39da',
+ 'id': u'54e4225c-01aa-4868-acf5-2379ea8816a4',
  'name': u'harvester',
  'number_administered_packages': 0L,
  'number_of_edits': 0L,
@@ -3443,13 +3434,13 @@ rabbitmq-server.
 + chkconfig rabbitmq-server on
 + '[' '!' -e /tmp/kata-SKIP-dbinit ']'
 + su apache
-2013-03-19 11:11:34,848 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'file:///home/ckan/pyenv/src/ckanext-ddi/ddi3.txt', 'publisher_id': u'', 'type': u'DDI3', 'active': True, 'config': None}
-2013-03-19 11:11:34,877 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 64479094-df86-4c7b-a8ee-96645eec7750
-2013-03-19 11:11:34,896 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'64479094-df86-4c7b-a8ee-96645eec7750'}
-2013-03-19 11:11:34,919 INFO  [ckanext.harvest.logic.action.create] Harvest job saved f0d744ed-4eb8-45a3-9d32-f05b2981d988
+2013-04-19 13:02:26,373 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'file:///home/ckan/pyenv/src/ckanext-ddi/ddi3.txt', 'publisher_id': u'', 'type': u'DDI3', 'active': True, 'config': None}
+2013-04-19 13:02:26,406 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 49a3a7a9-7c11-496b-9d8d-94be94c8da87
+2013-04-19 13:02:26,424 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'49a3a7a9-7c11-496b-9d8d-94be94c8da87'}
+2013-04-19 13:02:26,472 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 0972970c-9235-41d2-b457-296e9923ab93
 
 Created new harvest source:
-Source id: 64479094-df86-4c7b-a8ee-96645eec7750
+Source id: 49a3a7a9-7c11-496b-9d8d-94be94c8da87
       url: file:///home/ckan/pyenv/src/ckanext-ddi/ddi3.txt
      type: DDI3
    active: True
@@ -3459,13 +3450,13 @@ publisher:
 
 There is 1 harvest source
 A new Harvest Job for this source has also been created
-2013-03-19 11:11:39,670 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://www.fsd.uta.fi/fi/aineistot/luettelo/fsd-ddi-records-uris-fi.txt', 'publisher_id': u'', 'type': u'DDI', 'active': True, 'config': None}
-2013-03-19 11:11:39,697 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 019c7587-3d34-4da0-bc7e-0c49ce838a0c
-2013-03-19 11:11:39,728 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'019c7587-3d34-4da0-bc7e-0c49ce838a0c'}
-2013-03-19 11:11:39,746 INFO  [ckanext.harvest.logic.action.create] Harvest job saved f807954b-e054-48bd-ab74-54475650bf80
+2013-04-19 13:02:28,797 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://www.fsd.uta.fi/fi/aineistot/luettelo/fsd-ddi-records-uris-fi.txt', 'publisher_id': u'', 'type': u'DDI', 'active': True, 'config': None}
+2013-04-19 13:02:28,865 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 92948d1d-0a26-4e0d-bfb1-e8bd031ba19d
+2013-04-19 13:02:28,890 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'92948d1d-0a26-4e0d-bfb1-e8bd031ba19d'}
+2013-04-19 13:02:28,915 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 5c7b0f01-f183-4b67-b3d3-e4799b9f5e78
 
 Created new harvest source:
-Source id: 019c7587-3d34-4da0-bc7e-0c49ce838a0c
+Source id: 92948d1d-0a26-4e0d-bfb1-e8bd031ba19d
       url: http://www.fsd.uta.fi/fi/aineistot/luettelo/fsd-ddi-records-uris-fi.txt
      type: DDI
    active: True
@@ -3475,13 +3466,13 @@ publisher:
 
 There are 2 harvest sources
 A new Harvest Job for this source has also been created
-2013-03-19 11:11:44,432 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://helda.helsinki.fi/oai/request', 'publisher_id': u'', 'type': u'OAI-PMH', 'active': True, 'config': None}
-2013-03-19 11:11:44,474 INFO  [ckanext.harvest.logic.action.create] Harvest source created: c386a420-b12c-4514-9ed6-d075e754ee04
-2013-03-19 11:11:44,505 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'c386a420-b12c-4514-9ed6-d075e754ee04'}
-2013-03-19 11:11:44,590 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 2e6ce2db-f775-48ce-b2b4-4657ceb6fc34
+2013-04-19 13:02:33,593 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://helda.helsinki.fi/oai/request', 'publisher_id': u'', 'type': u'OAI-PMH', 'active': True, 'config': None}
+2013-04-19 13:02:33,627 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 45f8797f-5b3c-4b86-863c-4a580f2287d4
+2013-04-19 13:02:33,690 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'45f8797f-5b3c-4b86-863c-4a580f2287d4'}
+2013-04-19 13:02:33,725 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 8d4c3a03-dd76-45dd-9786-ccb84c4c5ab9
 
 Created new harvest source:
-Source id: c386a420-b12c-4514-9ed6-d075e754ee04
+Source id: 45f8797f-5b3c-4b86-863c-4a580f2287d4
       url: http://helda.helsinki.fi/oai/request
      type: OAI-PMH
    active: True
@@ -3494,7 +3485,7 @@ A new Harvest Job for this source has also been created
 + chkconfig supervisord on
 Stopping atd: [FAILED]
 Starting atd: [  OK  ]
-job 1 at 2013-03-19 11:14
+job 1 at 2013-04-19 13:05
 Starting shibd: [  OK  ]
 Starting httpd: [  OK  ]
 Starting supervisord: [  OK  ]
@@ -3540,43 +3531,49 @@ Starting crond: [  OK  ]
 [1;31m+ echo 'Python package mismatches:'
 Python package mismatches:
 + cat /tmp/kata-70.tmp
+7c7
+< Mako==0.7.3
+---
+> Mako==0.8.0
 23c23
-< WebTest==2.0
+< WebTest==2.0.2
 ---
-> WebTest==2.0.2
+> WebTest==2.0.5
 30c30
-< -e git+https://github.com/kata-csc/ckan.git@c2dd5e7e9b670d02b3711139b8acab3325753fbf#egg=ckan-dev
+< -e git+https://github.com/kata-csc/ckan.git@b8da1c1dfda3c5593b6401c095b96c4cc50ed104#egg=ckan-dev
 ---
-> -e git+https://github.com/kata-csc/ckan.git@b8da1c1dfda3c5593b6401c095b96c4cc50ed104#egg=ckan-dev
-32c32
-< -e git+https://github.com/kata-csc/ckanext-ddi.git@b3fb02a1c5a0d87d55365a68304893f326a201ed#egg=ckanext_ddi-dev
+> -e git+https://github.com/kata-csc/ckan.git@43d0b5e462dc1b7891d72538a63bcd0b7d0b2e8d#egg=ckan-dev
+33c33
+< -e git+https://github.com/kata-csc/ckanext-harvest.git@eda0ab77e1cb2ab92ac374f7904e48a2e2411348#egg=ckanext_harvest-dev
 ---
-> -e git+https://github.com/kata-csc/ckanext-ddi.git@8caa466d7027445be6373de83ec32ff3648ea1a7#egg=ckanext_ddi-dev
-34c34
-< -e git://github.com/kata-csc/ckanext-kata.git@1aa6e315d4e49c871ef959b46627684028fadab1#egg=ckanext_kata-dev
+> -e git+https://github.com/kata-csc/ckanext-harvest.git@b3a4bb35d51dcdeb9e1d07b43d0b1138854af732#egg=ckanext_harvest-dev
+35c35
+< -e git+https://github.com/kata-csc/ckanext-oaipmh.git@603c5e48f0ad44cbdd31642a3727f73c2518d8e6#egg=ckanext_oaipmh-dev
 ---
-> -e git://github.com/kata-csc/ckanext-kata.git@88c1bae3becbf6f7b448613da61ecfc7d5759b1c#egg=ckanext_kata-dev
-36c36
-< -e git://github.com/kata-csc/ckanext-shibboleth.git@cf9332e58c31dd7b25418d536ffbd160d06e86aa#egg=ckanext_repoze_who_shibboleth-dev
+> -e git+https://github.com/kata-csc/ckanext-oaipmh.git@5578f9cb3851755defa7276a5faa7a8fec5ffd47#egg=ckanext_oaipmh-dev
+44,46c44,46
+< lxml==3.1.0
+< nose==1.2.1
+< numpy==1.7.0
 ---
-> -e git://github.com/kata-csc/ckanext-shibboleth.git@ffb6e41bf2d7b2b452f8638b140c8b4b03ea2d54#egg=ckanext_repoze_who_shibboleth-dev
-62c62
-< six==1.2.0
+> lxml==3.1.2
+> nose==1.3.0
+> numpy==1.7.1
+61c61
+< simplejson==3.1.0
 ---
-> six==1.3.0
+> simplejson==3.1.3
 + echo -en '\033[0;39m'
 [0;39m+ rm -f /tmp/kata-70.tmp
 + '[' -f /tmp/kata-SKIP71 ']'
 + datadir=/usr/share/kata-ckan-dev/setup-data
++ docdir=/usr/share/doc/kata-ckan-dev
 + mv /tmp/pip.freeze.current /usr/share/kata-ckan-dev/setup-data
 + chown root:root /usr/share/kata-ckan-dev/setup-data/pip.freeze.current
-  Cleanup    : python-libs-2.6.6-29.el6_3.3.x86_64                      146/155 
-  Cleanup    : python-2.6.6-29.el6_3.3.x86_64                           147/155 
-  Cleanup    : libstdc++-4.4.6-4.el6.x86_64                             148/155 
-  Cleanup    : policycoreutils-2.0.83-19.24.el6.x86_64                  149/155 
-  Cleanup    : libxml2-2.7.6-8.el6_3.4.x86_64                           150/155 
-  Cleanup    : zlib-1.2.3-27.el6.x86_64                                 151/155 
-  Cleanup    : libsemanage-2.0.43-4.1.el6.x86_64                        152/155 
-  Cleanup    : glibc-common-2.12-1.80.el6_3.7.x86_64                    153/155 
-  Cleanup    : glibc-2.12-1.80.el6_3.7.x86_64                           154/155 
-  Cleanup    : libgcc-4.4.6-4.el6.x86_64                                155/155 
+++ date
++ date='Fri Apr 19 13:02:47 EEST 2013'
++ echo '--- Fri Apr 19 13:02:47 EEST 2013 ---: Part 1 (kata-packaging source)'
++ cat /usr/share/kata-ckan-dev/setup-data/kata-packaging.versioninfo
++ echo '--- Fri Apr 19 13:02:47 EEST 2013 ---: Part 2 (pip freeze)'
++ cat /usr/share/kata-ckan-dev/setup-data/pip.freeze.current
++ echo '--- Fri Apr 19 13:02:47 EEST 2013 ---: End of part 2'
