@@ -2,7 +2,6 @@
 #set -x
 #set -v
 
-echo DEBUG $0 $(pwd)
 now=$(date '+%s')
 infofile=version.info
 
@@ -33,9 +32,7 @@ function git_available {
 if git_available >"${infofile}.new"
 then
   rm "${infofile}.new"
-  echo "DEBUG $(pwd)" >$infofile
-  #FIXME infofile should be new after removing DEBUG
-  echo '$ git rev-parse HEAD' >>$infofile
+  echo '$ git rev-parse HEAD' >$infofile
   git rev-parse HEAD >>$infofile
   echo '$ git status' >>$infofile
   git status >>$infofile

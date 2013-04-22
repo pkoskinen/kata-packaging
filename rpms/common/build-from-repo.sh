@@ -22,7 +22,6 @@ fi
 if [ -x src/versioninfo.sh ]
 then
   pushd ../.. >/dev/null
-  echo DEBUG $0 $(pwd)
   if [ -e ~1/src/version.info ]
   then
     mv ~1/src/version.info .
