@@ -28,6 +28,7 @@ then
   fi
   ~1/src/versioninfo.sh
   mv version.info ~1/src
+  echo "Now building $name version $version" >>~1/src/version.info
   popd >/dev/null
 fi
 # for prod we don't use the versioninfo mechanism above, but make sure
@@ -44,6 +45,7 @@ then
    pushd ../.. >/dev/null
    ~1/src/devproddiff.sh prod
    mv sourcediffs.txt ~1/src
+   echo "Now building kata-prod version $version" >>~1/src/sourcediffs.txt
    popd >/dev/null
 fi
 cp -a src "${nv}"

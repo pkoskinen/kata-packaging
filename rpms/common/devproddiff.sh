@@ -25,7 +25,7 @@ function do_prod {
 }
 
 function collect {
-  find . -type f \! -name sourcediffs-tmp\* | xargs md5sum | sort -k 2 >$1
+  find . -name rpmbuild -prune -o -type f \! -name sourcediffs-tmp\* -print0 | xargs -0 md5sum | sort -k 2 >$1
 }
 
 
