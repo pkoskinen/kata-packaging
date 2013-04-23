@@ -2,7 +2,7 @@
  Package                Arch   Version                Repository           Size
 ================================================================================
 Installing:
- kata-ckan-prod         x86_64 772979-1.el6           /kata-ckan-prod-772979-1.el6.x86_64
+ kata-ckan-prod         x86_64 778273-1.el6           /kata-ckan-prod-778273-1.el6.x86_64
                                                                           183 M
 Installing for dependencies:
  SDL                    x86_64 1.2.14-3.el6           base                193 k
@@ -209,8 +209,8 @@ Starting postgresql service: [  OK  ]
 + '[' -f /tmp/kata-SKIP22 ']'
 + instloc=/home/ckan
 ++ date +%y%m%d-%H%M%S
-+ postfix=-130419-193450
-+ cp /opt/data/solr/conf/schema.xml /opt/data/solr/conf/schema.xml.bak--130419-193450
++ postfix=-130423-092431
++ cp /opt/data/solr/conf/schema.xml /opt/data/solr/conf/schema.xml.bak--130423-092431
 + cp /home/ckan/pyenv/src/ckan/ckan/config/solr/schema-2.0.xml /opt/data/solr/conf/schema.xml
 + service tomcat6 restart
 Stopping tomcat6: [  OK  ]
@@ -280,8 +280,8 @@ patching file ssl.conf
   ret = fn(self, con, *args, **kw)
 /home/ckan/pyenv/lib/python2.6/site-packages/sqlalchemy/engine/reflection.py:47: SAWarning: Skipped unsupported reflection of expression-based index idx_user_name_index
   ret = fn(self, con, *args, **kw)
-2013-04-19 19:35:45,835 INFO  [ckan.model] CKAN database version upgraded: 0 -> 65
-2013-04-19 19:35:46,005 INFO  [ckan.model] Database initialised
+2013-04-23 09:25:31,704 INFO  [ckan.model] CKAN database version upgraded: 0 -> 65
+2013-04-23 09:25:31,835 INFO  [ckan.model] Database initialised
 Initialising DB: SUCCESS
 + '[' -f /tmp/kata-SKIP40 ']'
 + patchdir=/usr/share/kata-ckan-prod/setup-patches
@@ -349,13 +349,13 @@ rabbitmq-server.
 + chkconfig rabbitmq-server on
 + '[' '!' -e /tmp/kata-SKIP-dbinit ']'
 + su apache
-2013-04-19 19:36:49,406 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'file:///home/ckan/pyenv/src/ckanext-ddi/ddi3.txt', 'publisher_id': u'', 'type': u'DDI3', 'active': True, 'config': None}
-2013-04-19 19:36:49,439 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 515e2734-b232-4b48-902a-5be60eb4ce2d
-2013-04-19 19:36:49,457 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'515e2734-b232-4b48-902a-5be60eb4ce2d'}
-2013-04-19 19:36:49,481 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 0909a9fc-6651-4ca8-bc47-d6bff6a67952
+2013-04-23 09:26:41,571 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'file:///home/ckan/pyenv/src/ckanext-ddi/ddi3.txt', 'publisher_id': u'', 'type': u'DDI3', 'active': True, 'config': None}
+2013-04-23 09:26:41,647 INFO  [ckanext.harvest.logic.action.create] Harvest source created: ea64f05b-539a-4fab-8a03-fa58138d9087
+2013-04-23 09:26:41,666 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'ea64f05b-539a-4fab-8a03-fa58138d9087'}
+2013-04-23 09:26:41,697 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 19947233-e683-4845-be58-3a429d5802dc
 
 Created new harvest source:
-Source id: 515e2734-b232-4b48-902a-5be60eb4ce2d
+Source id: ea64f05b-539a-4fab-8a03-fa58138d9087
       url: file:///home/ckan/pyenv/src/ckanext-ddi/ddi3.txt
      type: DDI3
    active: True
@@ -365,13 +365,13 @@ publisher:
 
 There is 1 harvest source
 A new Harvest Job for this source has also been created
-2013-04-19 19:36:51,857 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://www.fsd.uta.fi/fi/aineistot/luettelo/fsd-ddi-records-uris-fi.txt', 'publisher_id': u'', 'type': u'DDI', 'active': True, 'config': None}
-2013-04-19 19:36:52,013 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 6cc4dc8b-4f12-4c8f-a3c1-3169e5eeabc4
-2013-04-19 19:36:52,038 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'6cc4dc8b-4f12-4c8f-a3c1-3169e5eeabc4'}
-2013-04-19 19:36:52,063 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 33f3f67f-e5b7-404a-8a7d-0ead45d92c82
+2013-04-23 09:26:44,343 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://www.fsd.uta.fi/fi/aineistot/luettelo/fsd-ddi-records-uris-fi.txt', 'publisher_id': u'', 'type': u'DDI', 'active': True, 'config': None}
+2013-04-23 09:26:44,370 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 234e8ffc-22f8-44d6-a590-f47be2c82d16
+2013-04-23 09:26:44,395 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'234e8ffc-22f8-44d6-a590-f47be2c82d16'}
+2013-04-23 09:26:44,420 INFO  [ckanext.harvest.logic.action.create] Harvest job saved cbd46ae5-5c02-44c7-a336-34e82d8b0512
 
 Created new harvest source:
-Source id: 6cc4dc8b-4f12-4c8f-a3c1-3169e5eeabc4
+Source id: 234e8ffc-22f8-44d6-a590-f47be2c82d16
       url: http://www.fsd.uta.fi/fi/aineistot/luettelo/fsd-ddi-records-uris-fi.txt
      type: DDI
    active: True
@@ -381,13 +381,13 @@ publisher:
 
 There are 2 harvest sources
 A new Harvest Job for this source has also been created
-2013-04-19 19:36:56,655 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://helda.helsinki.fi/oai/request', 'publisher_id': u'', 'type': u'OAI-PMH', 'active': True, 'config': None}
-2013-04-19 19:36:56,718 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 7d7a5e34-934a-48c7-af2e-1290d4ca661c
-2013-04-19 19:36:56,778 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'7d7a5e34-934a-48c7-af2e-1290d4ca661c'}
-2013-04-19 19:36:56,800 INFO  [ckanext.harvest.logic.action.create] Harvest job saved e603d9dd-e46b-4d41-8251-b20a401517fe
+2013-04-23 09:26:46,809 INFO  [ckanext.harvest.logic.action.create] Creating harvest source: {'user_id': u'', 'url': u'http://helda.helsinki.fi/oai/request', 'publisher_id': u'', 'type': u'OAI-PMH', 'active': True, 'config': None}
+2013-04-23 09:26:46,888 INFO  [ckanext.harvest.logic.action.create] Harvest source created: 520be699-af1a-4d09-aae8-ef70cebf37c4
+2013-04-23 09:26:46,918 INFO  [ckanext.harvest.logic.action.create] Harvest job create: {'source_id': u'520be699-af1a-4d09-aae8-ef70cebf37c4'}
+2013-04-23 09:26:46,937 INFO  [ckanext.harvest.logic.action.create] Harvest job saved 6f63d668-0f2b-4f62-9d10-2f1a8c768d4e
 
 Created new harvest source:
-Source id: 7d7a5e34-934a-48c7-af2e-1290d4ca661c
+Source id: 520be699-af1a-4d09-aae8-ef70cebf37c4
       url: http://helda.helsinki.fi/oai/request
      type: OAI-PMH
    active: True
@@ -402,17 +402,17 @@ A new Harvest Job for this source has also been created
 + datadir=/usr/share/kata-ckan-prod/setup-data
 + docdir=/usr/share/doc/kata-ckan-prod
 ++ date
-+ date='Fri Apr 19 19:36:56 EEST 2013'
++ date='Tue Apr 23 09:26:47 EEST 2013'
 + '[' '!' -e /usr/share/doc/kata-ckan-prod/kataversion.txt ']'
 + echo '*** NEVER DELETE THIS FILE ***'
 + echo
-+ echo '--- Fri Apr 19 19:36:56 EEST 2013 ---: Start of installation'
++ echo '--- Tue Apr 23 09:26:47 EEST 2013 ---: Start of installation'
 + cat /usr/share/kata-ckan-prod/setup-data/kata-prod.versioninfo
-+ echo '--- Fri Apr 19 19:36:56 EEST 2013 ---: End of installation'
++ echo '--- Tue Apr 23 09:26:47 EEST 2013 ---: End of installation'
 + echo '*** NEVER DELETE THIS FILE ***'
 Stopping atd: [FAILED]
 Starting atd: [  OK  ]
-job 1 at 2013-04-19 19:39
+job 1 at 2013-04-23 09:29
 Starting shibd: [  OK  ]
 Starting httpd: [  OK  ]
 Starting supervisord: [  OK  ]

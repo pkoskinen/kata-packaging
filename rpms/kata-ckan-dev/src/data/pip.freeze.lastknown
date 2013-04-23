@@ -29,10 +29,10 @@ argparse==1.2.1
 carrot==0.10.7
 -e git+https://github.com/kata-csc/ckan.git@43d0b5e462dc1b7891d72538a63bcd0b7d0b2e8d#egg=ckan-dev
 ckanclient==0.10
--e git+https://github.com/kata-csc/ckanext-ddi.git@8caa466d7027445be6373de83ec32ff3648ea1a7#egg=ckanext_ddi-dev
--e git+https://github.com/kata-csc/ckanext-harvest.git@b3a4bb35d51dcdeb9e1d07b43d0b1138854af732#egg=ckanext_harvest-dev
+-e git+https://github.com/kata-csc/ckanext-ddi.git@656b94116bb42becbd48bda1fab5e5436aeb1152#egg=ckanext_ddi-dev
+-e git+https://github.com/kata-csc/ckanext-harvest.git@5c9f7a9ea14ec1b27cdc0ff823702420a60af515#egg=ckanext_harvest-dev
 -e git://github.com/kata-csc/ckanext-kata.git@88c1bae3becbf6f7b448613da61ecfc7d5759b1c#egg=ckanext_kata-dev
--e git+https://github.com/kata-csc/ckanext-oaipmh.git@5578f9cb3851755defa7276a5faa7a8fec5ffd47#egg=ckanext_oaipmh-dev
+-e git+https://github.com/kata-csc/ckanext-oaipmh.git@9c004b599a18710bd16bef92a174496642c9aa81#egg=ckanext_oaipmh-dev
 -e git://github.com/kata-csc/ckanext-shibboleth.git@ffb6e41bf2d7b2b452f8638b140c8b4b03ea2d54#egg=ckanext_repoze_who_shibboleth-dev
 -e git+https://github.com/kata-csc/ckanext-sitemap.git@1df31049473a7bd6f82967a5a9de8b93d8cc0616#egg=ckanext_sitemap-dev
 -e git+https://github.com/kata-csc/ckanext-urn.git@b48dfffb0f327aaaf21664ec0057f137ab58ce41#egg=ckanext_urn-dev
