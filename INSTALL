@@ -34,7 +34,7 @@ step described in this document.
 By default CentOS / Redhat comes with a closed firewall (all incoming
 ports closed, all outgoing ports open). 
 
-Originally the our package opened the firewall for KATA (only standard
+Originally our package opened the firewall for KATA (only standard
 ports 80 and 443 are required). This functionality has been removed,
 because the customer preferred to use their own scripts.  Using RHEL 6
 / CentOS 6 default tools the firewall can be persistently configured
