@@ -31,14 +31,20 @@ scope of this document. However, it can be mentioned that after
 etckeeper installation no manual steps are required related to any
 step described in this document.
 
-Originally the kata package also opened the firewall (only standard
-ports 80 and 443 are required). This has been removed from the
-package, because the customer preferred to use their own scripts.
-Using RHEL 6 / CentOS 6 default tools the firewall can be persistently
-configured with the following 2 commands
+By default CentOS / Redhat comes with a closed firewall (all incoming
+ports closed, all outgoing ports open). 
+
+Originally the our package opened the firewall for KATA (only standard
+ports 80 and 443 are required). This functionality has been removed,
+because the customer preferred to use their own scripts.  Using RHEL 6
+/ CentOS 6 default tools the firewall can be persistently configured
+with the following 2 commands
 
   - "sudo lokkit --update -p 80:tcp"
   - "sudo lokkit --update -p 443:tcp"
+
+Opening further ports is not needed for KATA and happens on the
+administrator's own risk.
 
 
 II. Installation steps
