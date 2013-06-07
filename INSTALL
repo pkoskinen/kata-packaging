@@ -6,7 +6,7 @@ Installation should be carried out on a clean RHEL 6 / CentOS 6 machine
 I. Packages delivered:
 
 1. mcfg.rpm  (called the master configuration tool)
-2. apache-solr.rpm
+2. solr.rpm
 3. kata-prod.rpm
 4. dummy-deps.rpm
 
@@ -65,7 +65,7 @@ II. Installation steps
 
 3. Install Apache solr
 
-   3.a. "sudo yum install apache-solr.rpm"
+   3.a. "sudo yum install solr.rpm"
 
 
 4. Install master configuration tool

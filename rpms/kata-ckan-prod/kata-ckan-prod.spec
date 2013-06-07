@@ -17,7 +17,7 @@ Group: Applications/File (to be verified)
 License: AGPLv3+
 #Url: http://not.sure.yet
 Source: kata-ckan-prod-%{version}.tgz
-Requires: apache-solr
+Requires: solr
 Requires: catdoc
 Requires: libxslt
 Requires: mcfg
@@ -66,6 +66,7 @@ diff -u patches/orig/pg_hba.conf patches/kata/pg_hba.conf >pg_hba.conf.patch || 
 diff -u patches/orig/postgresql.conf patches/kata/postgresql.conf >postgresql.conf.patch || true
 diff -u patches/orig/shib.conf patches/kata/shib.conf >shib.conf.patch || true
 diff -u patches/orig/shibboleth2.xml patches/kata/shibboleth2.xml >shibboleth2.xml.patch || true
+diff -u patches/orig/solr.xml patches/kata/solr.xml >solr.xml.patch || true
 diff -u patches/orig/ssl.conf patches/kata/ssl.conf >ssl.conf.patch || true
 diff -u patches/orig/tomcat6.conf patches/kata/tomcat6.conf >tomcat6.conf.patch || true
 
@@ -176,6 +177,7 @@ rm -rf $RPM_BUILD_ROOT
 %{patchdir}/attribute-policy.xml.patch
 %{patchdir}/shib.conf.patch
 %{patchdir}/shibboleth2.xml.patch
+%{patchdir}/solr.xml.patch
 %{patchdir}/ssl.conf.patch
 %{patchdir}/tomcat6.conf.patch
 
@@ -191,7 +193,7 @@ rm -rf $RPM_BUILD_ROOT
 %{scriptdir}/04configuredependencies.sh %{patchdir}
 %{scriptdir}/16configshibbolethsp.sh "/usr/share/kata-ckan-prod"
 %{scriptdir}/20setuppostgres.sh %{patchdir}
-%{scriptdir}/22configsolr.sh /home/ckan
+%{scriptdir}/22configsolr.sh /home/ckan %{patchdir}
 %{scriptdir}/24setupapachessl.sh "/usr/share/kata-ckan-prod"
 %{scriptdir}/32setupckan-root.sh apache
 su -c "%{scriptdir}/36initckandb.sh /home/ckan" apache

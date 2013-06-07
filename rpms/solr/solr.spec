@@ -1,16 +1,16 @@
 # See http://blog.nexcess.net/2011/12/30/installing-apache-solr-on-centos/ for required tomcat6 and java jdk.
 Summary: Solr binary package
-Name: apache-solr
-Version: 3.5.0
-Release: 3%{?dist}
+Name: solr
+Version: 4.3.0
+Release: 4%{?dist}
 Group: Applications/File
 License: Apache License 2.0
-Source0: apache-solr-3.5.0.tgz
+Source0: solr-4.3.0.tgz
 Requires: tomcat6
 Requires: java-1.6.0-openjdk
 
 %description
-SOLR binary package, for version 3.5.0. Installs to a tomcat6 installation as war file and example data files.
+SOLR binary package, for version 4.3.0. Installs to a tomcat6 installation as war file and example data files.
 
 %prep
 %setup
@@ -21,8 +21,12 @@ SOLR binary package, for version 3.5.0. Installs to a tomcat6 installation as wa
 %install
 install -d $RPM_BUILD_ROOT/opt/data/solr
 install -d $RPM_BUILD_ROOT/usr/share/tomcat6/conf/Catalina/localhost
-mv $RPM_BUILD_DIR/apache-solr-3.5.0/example/solr $RPM_BUILD_ROOT/opt/data
-mv $RPM_BUILD_DIR/apache-solr-3.5.0/dist/apache-solr-3.5.0.war $RPM_BUILD_ROOT/opt/data/solr/solr.war
+install -d $RPM_BUILD_ROOT/usr/share/tomcat6/lib
+mv $RPM_BUILD_DIR/solr-4.3.0/example/solr $RPM_BUILD_ROOT/opt/data
+mv $RPM_BUILD_DIR/solr-4.3.0/dist/solr-4.3.0.war $RPM_BUILD_ROOT/opt/data/solr/solr.war
+mv $RPM_BUILD_DIR/solr-4.3.0/example/lib/ext/* $RPM_BUILD_ROOT/usr/share/tomcat6/lib/
+mv $RPM_BUILD_DIR/solr-4.3.0/example/resources/log4j.properties $RPM_BUILD_ROOT/opt/data/solr/
+
 # A bit of a kludge ... works ok though
 cat > $RPM_BUILD_ROOT/usr/share/tomcat6/conf/Catalina/localhost/solr.xml <<EOF
 <?xml version="1.0" encoding="utf-8"?>
@@ -30,8 +34,8 @@ cat > $RPM_BUILD_ROOT/usr/share/tomcat6/conf/Catalina/localhost/solr.xml <<EOF
   <Environment name="solr/home" type="java.lang.String" value="/opt/data/solr/" override="true"/>
 </Context>
 EOF
-install -d $RPM_BUILD_ROOT/opt/data/solr/conf/lang
-cat > $RPM_BUILD_ROOT/opt/data/solr/conf/lang/stopwords_fi.txt << EOF
+install -d $RPM_BUILD_ROOT/opt/data/solr/collection1/conf/lang
+cat > $RPM_BUILD_ROOT/opt/data/solr/collection1/conf/lang/stopwords_fi.txt << EOF
 # From http://trac.foswiki.org/browser/trunk/SolrPlugin/solr/multicore/conf/stopwords-fi.txt
 # This file is distributed under the BSD License.
 # See http://snowball.tartarus.org/license.php
@@ -352,8 +356,13 @@ EOF
 
 %post
 # To counter the issues with a 500 error on solr.
-sed -i 's/enable="${solr.velocity.enabled:true}"/enable="${solr.velocity.enabled:false}"/' /opt/data/solr/conf/solrconfig.xml
+sed -i 's/enable="${solr.velocity.enabled:true}"/enable="${solr.velocity.enabled:false}"/' /opt/data/solr/collection1/conf/solrconfig.xml
 service tomcat6 restart
 %files
 %attr(-,tomcat,tomcat)/opt/data/solr
+%attr(-,root,root)/usr/share/tomcat6/lib/jcl-over-slf4j-1.6.6.jar
+%attr(-,root,root)/usr/share/tomcat6/lib/jul-to-slf4j-1.6.6.jar
+%attr(-,root,root)/usr/share/tomcat6/lib/log4j-1.2.16.jar
+%attr(-,root,root)/usr/share/tomcat6/lib/slf4j-api-1.6.6.jar
+%attr(-,root,root)/usr/share/tomcat6/lib/slf4j-log4j12-1.6.6.jar
 %attr(-,tomcat,tomcat)/usr/share/tomcat6/conf/Catalina/localhost/solr.xml

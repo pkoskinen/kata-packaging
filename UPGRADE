@@ -7,8 +7,14 @@ a clean minimal RHEL/CentOS system as documented in INSTALL. Upgrading an
 existing installation is only supported by carefully following the
 instructions below.
 
-No changes have happened in apache-solr, so this package does not
-need to be uninstalled, upgraded or reinstalled.
+Normally there are not many changes in Solr, so no procedures are needed,
+but if you are using apache-solr version 3.5, it needs to be uninstalled
+with: 
+
+$ yum remove apache-solr
+
+If there are files left under /opt/data/solr, remove them, as upgrading to
+version 4.3 brings major changes.
 
 As always in before bigger administration works, make sure you have a
 complete and valid backup, peferably on a seperate storage medium that

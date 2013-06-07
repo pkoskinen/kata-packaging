@@ -11,5 +11,5 @@ else
 fi
 sudo cp ~/abuild-input/abuild-prod-sp-cert.pem /root/sp-cert.pem
 sudo cp ~/abuild-input/abuild-prod-sp-key.pem /root/sp-key.pem 
-sudo yum install -y apache-solr-*.rpm
+sudo yum install -y solr-*.rpm
 script -c 'sudo yum install -y 'kata-ckan-prod-*.rpm
