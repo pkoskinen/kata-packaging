@@ -16,5 +16,6 @@ popd >/dev/null
 
 cp /opt/data/solr/collection1/conf/schema.xml /opt/data/solr/collection1/conf/schema.xml.bak-${postfix}
 cp $instloc/pyenv/src/ckan/ckan/config/solr/schema-2.0.xml /opt/data/solr/collection1/conf/schema.xml
+chown tomcat:tomcat /opt/data/solr/solr.xml
 service tomcat6 start
 chkconfig tomcat6 on
