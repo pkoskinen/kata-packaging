@@ -8,10 +8,10 @@ fi
 instloc=$1
 patchdir=$2
 postfix=-$(date +%y%m%d-%H%M%S)
-chkconfig tomcat6 stop
+service tomcat6 stop
 
 pushd /opt/data/solr >/dev/null
-patch -b -p2 -i "${patchdir}/solr.xml.patch"
+patch -b -p2 -i ${patchdir}/solr.xml.patch
 popd >/dev/null
 
 cp /opt/data/solr/collection1/conf/schema.xml /opt/data/solr/collection1/conf/schema.xml.bak-${postfix}
