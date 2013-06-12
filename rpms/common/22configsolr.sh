@@ -10,7 +10,7 @@ patchdir=$2
 postfix=-$(date +%y%m%d-%H%M%S)
 chkconfig tomcat6 stop
 
-pushd /opt/data/solr/collection1/conf >/dev/null
+pushd /opt/data/solr >/dev/null
 patch -b -p2 -i "${patchdir}/solr.xml.patch"
 popd >/dev/null
 

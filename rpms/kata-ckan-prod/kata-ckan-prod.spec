@@ -129,6 +129,7 @@ install pg_hba.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install postgresql.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install shib.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install shibboleth2.xml.patch $RPM_BUILD_ROOT/%{patchdir}/
+install solr.xml.patch $RPM_BUILD_ROOT/%{patchdir}/
 install ssl.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 install tomcat6.conf.patch $RPM_BUILD_ROOT/%{patchdir}/
 
