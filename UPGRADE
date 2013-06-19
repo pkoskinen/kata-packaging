@@ -14,7 +14,10 @@ with:
 $ yum remove apache-solr
 
 If there are files left under /opt/data/solr, remove them, as upgrading to
-version 4.3 brings major changes.
+version 4.3 brings major changes. You also need to empty 
+/var/lib/tomcat6/webapps/solr with
+
+$ rm -rf /var/lib/tomcat6/webapps/solr
 
 As always in before bigger administration works, make sure you have a
 complete and valid backup, peferably on a seperate storage medium that

@@ -63,7 +63,7 @@ II. Installation steps
    "sudo yum install dummy-deps.rpm"
 
 
-3. Install Apache solr
+3. Install Solr
 
    3.a. "sudo yum install solr.rpm"
 
