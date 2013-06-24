@@ -48,10 +48,10 @@ then
   # this is of course not really true
   echo "some database configuration found, don't overwrite it"
   touch /tmp/kata-SKIP-dbinit
-  service postgresql start
+  service postgresql-9.2 start
 else
   rm -f /tmp/kata-SKIP-dbinit 2>/dev/null
-  service postgresql initdb
+  service postgresql-9.2 initdb
   # su postgres ensures that the resulting file has the correct owner
   su -c "patch -b -p2 -i ${patchdir}/pg_hba.conf.patch" postgres
   su -c "patch -b -p2 -i ${patchdir}/postgresql.conf.patch" postgres
@@ -64,8 +64,8 @@ else
   chmod og-r /opt/data/pgsql/data/postgresql.conf
 
   popd >/dev/null
-  service postgresql start
-  chkconfig postgresql on
+  service postgresql-9.2 start
+  chkconfig postgresql-9.2 on
   sleep 3    # creating the user happened to fail sometimes, wait a moment
   su -c "createuser -S -D -R apache" postgres
   su -c "createdb -O apache ckandb" postgres
