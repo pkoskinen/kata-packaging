@@ -26,5 +26,6 @@ python /usr/share/mcfg/tool/mcfg.py run /usr/share/mcfg/config/kata-template.ini
 # set same rights as development.ini used to have (from 32setupapache.sh)
 # this also allows 36ckaninstallenxtensions.sh to edit the extensions list
 chown  ${ckanuser}:${ckanuser} /etc/kata.ini
+chmod 600 /etc/kata.ini
 semanage fcontext -a -t httpd_sys_content_t /etc/kata.ini
 restorecon /etc/kata.ini

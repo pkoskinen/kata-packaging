@@ -66,7 +66,8 @@ else
   popd >/dev/null
   service postgresql-9.2 start
   chkconfig postgresql-9.2 on
+  cmd="CREATE ROLE apache ENCRYPTED PASSWORD '1Vf14mVpMi2535N' NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN"
   sleep 3    # creating the user happened to fail sometimes, wait a moment
-  su -c "createuser -S -D -R apache" postgres
+  su -c 'psql -c "'"$cmd"'"' postgres
   su -c "createdb -O apache ckandb" postgres
 fi

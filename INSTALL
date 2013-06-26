@@ -90,6 +90,15 @@ II. Installation steps
 
    System is operational. All configuration has happened in step 4.c.
 
+   Current Kata installation uses md5 password authentication in database 
+   connections. A default password is provided in the installation and it 
+   should be changed especially in production systems with two steps:
+
+   1. In psql say: ALTER USER apache WITH PASSWORD 'yournewpassword'
+   2. In /etc/kata.ini change the sql connection string: 
+      sqlalchemy_url: postgresql://apache:yournewpassword@127.0.0.1/ckandb
+   3. Apply the new settings by restarting httpd with:
+      service httpd restart
 
 A. Configuration
 
