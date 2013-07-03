@@ -19,6 +19,10 @@ version 4.3 brings major changes. You also need to empty
 
 $ rm -rf /var/lib/tomcat6/webapps/solr
 
+If your old system is installed with postgresql 8.4, you should follow the
+instructions in http://www.postgresql.org/docs/9.2/static/pgupgrade.html
+prior to following these instructions.
+
 As always in before bigger administration works, make sure you have a
 complete and valid backup, peferably on a seperate storage medium that
 is not mounted during backup. Most commands during the upgrade are
