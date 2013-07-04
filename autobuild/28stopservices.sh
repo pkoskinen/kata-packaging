@@ -6,5 +6,5 @@
 sudo service supervisord stop
 sudo service tomcat6 stop
 sudo service httpd stop
-sudo service postgresql stop
+sudo service postgresql-9.2 stop
 
